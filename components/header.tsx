@@ -90,8 +90,8 @@ export function Header() {
     <header className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
       scrolled 
-        ? "bg-black/95 backdrop-blur-md border-b border-zinc-800/80 py-0" 
-        : "bg-transparent py-3"
+        ? "bg-black backdrop-blur-md border-b border-zinc-800/80 py-0" 
+        : "bg-black py-3"
     )}>
       <div className="container flex items-center justify-between h-16 px-4 md:px-6">
         <div className="flex items-center gap-2">
