@@ -157,21 +157,34 @@ export function BookingForm() {
             </div>
           </div>
         ) : (
-          <>
-            <div className="bg-zinc-900 px-6 py-4 border-b border-zinc-800">
+          <>            <div className="bg-zinc-900 px-6 py-4 border-b border-zinc-800">
               <DialogHeader>
-                <DialogTitle className="text-xl font-semibold text-white flex items-center">
-                  <div className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center mr-3 font-bold text-sm">
-                    {step}
+                <div className="mb-4">
+                  <DialogTitle className="text-xl font-semibold text-white flex items-center">
+                    <div className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center mr-3 font-bold text-sm">
+                      {step}
+                    </div>
+                    {step === 1 && "Your Information"}
+                    {step === 2 && "Service Details"}
+                    {step === 3 && "Schedule Appointment"}
+                  </DialogTitle>
+                </div>
+                
+                <div className="flex items-center justify-between w-full mt-2">
+                  <div className="flex flex-col items-center">
+                    <div className={`w-4 h-4 rounded-full ${step === 1 ? "bg-white" : step > 1 ? "bg-white" : "bg-zinc-700"} mb-1`}></div>
+                    <span className={`text-xs ${step === 1 ? "text-white" : step > 1 ? "text-white" : "text-zinc-500"}`}>Details</span>
                   </div>
-                  {step === 1 && "Your Information"}
-                  {step === 2 && "Service Details"}
-                  {step === 3 && "Schedule Appointment"}
-                </DialogTitle>
-                <div className="flex mt-4 mb-1">
-                  <div className={`h-1 flex-1 mr-1 rounded-full ${step >= 1 ? "bg-white" : "bg-zinc-700"}`}></div>
-                  <div className={`h-1 flex-1 mx-1 rounded-full ${step >= 2 ? "bg-white" : "bg-zinc-700"}`}></div>
-                  <div className={`h-1 flex-1 ml-1 rounded-full ${step >= 3 ? "bg-white" : "bg-zinc-700"}`}></div>
+                  <div className={`h-0.5 flex-1 mx-2 ${step > 1 ? "bg-white" : "bg-zinc-700"}`}></div>
+                  <div className="flex flex-col items-center">
+                    <div className={`w-4 h-4 rounded-full ${step === 2 ? "bg-white" : step > 2 ? "bg-white" : "bg-zinc-700"} mb-1`}></div>
+                    <span className={`text-xs ${step === 2 ? "text-white" : step > 2 ? "text-white" : "text-zinc-500"}`}>Service</span>
+                  </div>
+                  <div className={`h-0.5 flex-1 mx-2 ${step > 2 ? "bg-white" : "bg-zinc-700"}`}></div>
+                  <div className="flex flex-col items-center">
+                    <div className={`w-4 h-4 rounded-full ${step === 3 ? "bg-white" : "bg-zinc-700"} mb-1`}></div>
+                    <span className={`text-xs ${step === 3 ? "text-white" : "text-zinc-500"}`}>Schedule</span>
+                  </div>
                 </div>
               </DialogHeader>
             </div>
