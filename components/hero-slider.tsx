@@ -54,7 +54,7 @@ export function HeroSlider() {  return (
               </Badge>
               
               <div className="relative mb-6">
-                <FatooraXLogo className="w-48 sm:w-64 h-auto" />
+                <FatooraXLogo src="/fatooraxfulllight.svg" className="w-48 sm:w-64 h-auto" />
               </div>
               
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-white leading-tight mb-6">

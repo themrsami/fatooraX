@@ -95,7 +95,7 @@ export function Header() {
     )}>
       <div className="container flex items-center justify-between h-16 px-4 md:px-6">
         <div className="flex items-center gap-2">
-          <FatooraXLogo className="w-32 h-auto" />
+          <FatooraXLogo className="w-16 h-auto" />
           <div className={cn(
             "h-6 w-px bg-zinc-800 mx-4 transition-opacity",
             scrolled ? "opacity-100" : "opacity-0"

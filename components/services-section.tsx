@@ -71,7 +71,7 @@ export function ServicesSection() {
             icon="BookOpen"
           />
           <ServiceCard
-            className="lg:col-start-2"
+            className="lg:col-start-2 self-start lg:row-start-1"
             title="Wealth Management"
             description="Comprehensive financial planning and investment advice for sustainable growth"
             detailedDescription={serviceDetails.wealth}

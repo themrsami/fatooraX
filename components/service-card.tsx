@@ -82,14 +82,18 @@ export function ServiceCard({
       style={{
         height: isHovered && detailedDescription ? 'auto' : 'auto',
         maxHeight: isHovered && detailedDescription ? '500px' : '240px',
-        transition: 'max-height 0.5s ease, transform 0.3s ease'
+        transition: 'max-height 0.5s ease-in-out'
       }}
     >
-      <div className="mb-4 p-2.5 bg-zinc-100 dark:bg-zinc-800 rounded-lg inline-block text-black dark:text-zinc-400 group-hover:text-black dark:group-hover:text-white transition-colors">
-        {getIcon(icon)}
+      <div className={`transition-all duration-[1200ms] ease-in-out ${isHovered ? 'items-start' : 'items-center'}`}>
+        <div className={`flex items-center gap-3 transition-all duration-[1200ms] ease-in-out ${isHovered ? 'flex-row mb-4' : 'flex-col mb-6'}`}>
+          <div className={`p-2.5 bg-zinc-100 dark:bg-zinc-800 rounded-lg text-black dark:text-zinc-400 group-hover:text-black dark:group-hover:text-white transition-all duration-[1200ms] ease-in-out`}>
+            {getIcon(icon)}
+          </div>
+          <h3 className={`text-lg font-bold text-gray-900 dark:text-white transition-all duration-[1200ms] ease-in-out ${isHovered ? 'text-left' : 'text-center mt-2'}`}>{title}</h3>
+        </div>
       </div>
-      <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">{title}</h3>
-      <p className="text-gray-600 dark:text-zinc-400 mb-4 text-sm">{description}</p>
+      <p className={`text-gray-600 dark:text-zinc-400 mb-4 text-sm transition-all duration-500 ${isHovered ? 'text-left opacity-100' : 'text-center opacity-0 absolute'}`}>{description}</p>
       
       {detailedDescription && (
         <div className={`transition-all duration-500 ease-in-out overflow-hidden ${isHovered ? 'opacity-100 max-h-96' : 'opacity-0 max-h-0'}`}>
