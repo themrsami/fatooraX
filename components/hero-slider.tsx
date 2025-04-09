@@ -81,7 +81,7 @@ export function HeroSlider() {  return (
                 key={index} 
                 className="flex items-center text-sm text-gray-600 dark:text-zinc-300"
               >
-                <feature.icon className="h-5 w-5 mr-3 text-blue-600 dark:text-white" />
+                <feature.icon className="h-5 w-5 mr-3 text-black dark:text-white" />
                 <span className="font-medium">{feature.text}</span>
               </div>
             ))}
