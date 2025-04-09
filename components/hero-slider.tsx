@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { FatooraXLogo } from "@/components/fatoora-x-logo"
 import { Badge } from "@/components/ui/badge"
+import { BookingForm } from "@/components/booking-form"
 
 // Enhanced hero images using Unsplash for a more professional look
 const heroImages = [
@@ -72,17 +73,13 @@ export function HeroSlider() {
           <p className="text-neutral-400 text-base md:text-lg">
             Premium financial services and ERP solutions designed for modern businesses seeking excellence and
             efficiency.
-          </p>
-
-          {/* Call-to-action buttons */}
+          </p>          {/* Call-to-action buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mt-4 pt-2">
             <Button className="bg-white text-black hover:bg-neutral-200 rounded-full px-8 py-6 text-base font-medium transition-all duration-200 shadow-lg">
               Explore Services
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button className="bg-transparent text-white hover:bg-white/10 rounded-full px-8 py-6 text-base font-medium transition-all duration-200 border border-neutral-700 backdrop-blur-sm">
-              Book a Consultation
-            </Button>
+            <BookingForm />
           </div>
         </div>
 
