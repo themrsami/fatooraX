@@ -1,7 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { Twitter, Linkedin, Instagram } from "lucide-react"
+import { Linkedin, Instagram } from "lucide-react"
+import { FaXTwitter } from "react-icons/fa6"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { FatooraXLogo } from "@/components/fatoora-x-logo"
@@ -17,10 +18,9 @@ export function Footer() {
                 <FatooraXLogo className="w-32 h-auto" src="/fatooraxgray.svg" />
               </div>
             </Link>
-            <p className="text-neutral-500 text-sm mt-4">Premium financial services for modern businesses.</p>
-            <div className="flex space-x-4 mt-6">
+            <p className="text-neutral-500 text-sm mt-4">Premium financial services for modern businesses.</p>            <div className="flex space-x-4 mt-6">
               {[
-                { name: "Twitter", icon: <Twitter className="h-4 w-4" /> },
+                { name: "Twitter", icon: <FaXTwitter className="h-4 w-4" /> },
                 { name: "LinkedIn", icon: <Linkedin className="h-4 w-4" /> },
                 { name: "Instagram", icon: <Instagram className="h-4 w-4" /> },
               ].map((social) => (

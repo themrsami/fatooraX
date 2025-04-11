@@ -31,7 +31,7 @@ const features = [
 export function HeroSlider() {  return (
     <section id="hero" className="relative overflow-hidden bg-white dark:bg-black">
       {/* Full-width cover photo with gradient overlay */}
-      <div className="relative w-full h-[80vh]">
+      <div className="relative w-full -mt-40 h-[120vh]">
         {/* Cover photo */}
         <Image
           src={heroCover.src}
