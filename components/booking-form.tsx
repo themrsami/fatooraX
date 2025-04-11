@@ -128,7 +128,7 @@ export function BookingForm() {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button className="bg-black text-white hover:bg-zinc-900 rounded-full px-8 py-6 text-base font-medium tracking-wide transition-all duration-300 border border-zinc-800 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black shadow-lg shadow-zinc-900/20 group">
+        <Button className="bg-white text-black hover:bg-black hover:text-white rounded-none px-8 py-6 text-base font-medium tracking-wide transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black shadow-lg shadow-zinc-900/20 group">
           <span>Book a Consultation</span>
           <ArrowRight className="ml-2 h-4 w-4 transform transition-transform group-hover:translate-x-1" />
         </Button>

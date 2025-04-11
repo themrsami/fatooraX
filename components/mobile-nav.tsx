@@ -16,7 +16,7 @@ export function MobileNav() {
     if (!isOpen) return
 
     const handleScroll = () => {
-      const sections = ["services", "about", "clients", "contact"]
+      const sections = ["hero", "services", "about", "clients", "contact"]
       
       const current = sections.find(section => {
         const element = document.getElementById(section)
@@ -51,10 +51,12 @@ export function MobileNav() {
   }
 
   const menuItems = [
-    { name: "Services", href: "#services", icon: <BarChart3 className="h-5 w-5" /> },
-    { name: "About", href: "#about", icon: <Building2 className="h-5 w-5" /> },
-    { name: "Clients", href: "#clients", icon: <Users className="h-5 w-5" /> },
-    { name: "Contact", href: "#contact", icon: <Phone className="h-5 w-5" /> },
+    { name: "Home", href: "/#hero", icon: <ArrowRight className="h-4 w-4" /> },
+    { name: "Services", href: "/#services", icon: <ArrowRight className="h-4 w-4" /> },
+    { name: "About", href: "/#about", icon: <ArrowRight className="h-4 w-4" /> },
+    { name: "Clients", href: "/#clients", icon: <ArrowRight className="h-4 w-4" /> },
+    { name: "Contact", href: "/#contact", icon: <ArrowRight className="h-4 w-4" /> },
+    { name: "Careers", href: "/careers", icon: <ArrowRight className="h-4 w-4" /> },
   ]
 
   // Animation variants
@@ -63,14 +65,14 @@ export function MobileNav() {
     open: { 
       opacity: 1,
       transition: { 
-        staggerChildren: 0.1,
-        delayChildren: 0.2
+        staggerChildren: 0.05,
+        delayChildren: 0.1
       }
     }
   }
   
   const itemVariants = {
-    closed: { y: 20, opacity: 0 },
+    closed: { y: 10, opacity: 0 },
     open: { y: 0, opacity: 1 }
   }
 
@@ -80,7 +82,7 @@ export function MobileNav() {
         variant="ghost" 
         size="icon" 
         onClick={toggleMenu} 
-        className="text-white hover:bg-white/10 rounded-full w-10 h-10 flex items-center justify-center"
+        className="text-white rounded-none w-10 h-10 flex items-center justify-center"
       >
         <Menu className="h-5 w-5" />
         <span className="sr-only">Toggle menu</span>
@@ -89,105 +91,50 @@ export function MobileNav() {
       <AnimatePresence>
         {isOpen && (
           <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="absolute top-16 right-4 z-50 bg-white w-64 shadow-lg rounded-md overflow-hidden"
           >
-            <div className="container h-full flex flex-col">
-              <div className="flex items-center justify-between pt-6 pb-2">
-                <FatooraXLogo className="w-28 h-auto" />
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={closeMenu}
-                  className="text-white hover:bg-white/10 rounded-full w-10 h-10 flex items-center justify-center"
-                >
-                  <X className="h-5 w-5" />
-                  <span className="sr-only">Close menu</span>
-                </Button>
-              </div>
-              
-              <div className="h-px w-full bg-gradient-to-r from-transparent via-zinc-800 to-transparent my-4"></div>
-              
+            <div className="flex flex-col">              
               <motion.nav 
-                className="flex flex-col flex-1 py-8"
+                className="flex flex-col py-4"
                 variants={containerVariants}
                 initial="closed"
                 animate="open"
               >
-                <div className="space-y-6 mb-12">
-                  {menuItems.map((item, index) => (
+                <div className="space-y-1">
+                  {menuItems.map((item) => (
                     <motion.div key={item.name} variants={itemVariants}>
                       <Link
                         href={item.href}
                         onClick={closeMenu}
-                        className={`flex items-center justify-between px-2 py-4 rounded-lg text-lg ${
-                          activeSection === item.href.substring(1)
-                            ? "text-white bg-white/5 font-medium"
-                            : "text-zinc-400 hover:text-white"
+                        className={`flex items-center justify-between px-4 py-2 text-sm ${
+                          activeSection === item.href.substring(2) || (item.href === "/careers" && window.location.pathname === "/careers")
+                            ? "text-black font-medium bg-gray-100"
+                            : "text-gray-700 hover:bg-gray-50 hover:text-black"
                         } transition-all duration-200`}
                       >
-                        <div className="flex items-center">
-                          <div className={`w-10 h-10 rounded-full ${
-                            activeSection === item.href.substring(1)
-                              ? "bg-zinc-800" 
-                              : "bg-zinc-900"
-                          } flex items-center justify-center mr-4`}>
-                            {item.icon}
-                          </div>
-                          {item.name}
-                        </div>
-                        <ChevronRight className="h-5 w-5 opacity-50" />
+                        <span>{item.name}</span>
+                        <ArrowRight className="h-3 w-3 text-gray-400" />
                       </Link>
                     </motion.div>
                   ))}
                 </div>
                 
-                <motion.div 
-                  variants={itemVariants}
-                  className="mt-auto space-y-4 py-6 border-t border-zinc-800"
-                >
-                  <div className="text-xs text-zinc-500 uppercase tracking-wider font-medium mb-4 px-2">
-                    Get Started
-                  </div>
-                  
-                  <Link 
-                    href="#" 
-                    onClick={closeMenu}
-                    className="flex items-center justify-between px-4 py-3 text-zinc-300 hover:text-white text-sm rounded-lg transition-all hover:bg-white/5"
-                  >
-                    <span>Documentation</span>
-                    <ExternalLink className="h-4 w-4 opacity-50" />
-                  </Link>
-                  
-                  <Link 
-                    href="#" 
-                    onClick={closeMenu}
-                    className="flex items-center justify-between px-4 py-3 text-zinc-300 hover:text-white text-sm rounded-lg transition-all hover:bg-white/5"
-                  >
-                    <span>Support Center</span>
-                    <ExternalLink className="h-4 w-4 opacity-50" />
-                  </Link>
-                </motion.div>
+                <div className="h-px w-full bg-gray-200 my-3"></div>
                 
                 <motion.div 
                   variants={itemVariants}
-                  className="flex flex-col gap-3 px-2"
+                  className="px-4 pt-2 pb-4"
                 >
                   <Button
-                    className="bg-white text-black hover:bg-zinc-100 rounded-lg px-5 py-6 text-base font-medium transition-all duration-200 shadow-lg flex justify-between group"
+                    className="w-full bg-black text-white hover:bg-gray-800 rounded-sm py-2 text-sm font-medium transition-all duration-200 flex justify-between"
                     onClick={closeMenu}
                   >
                     <span>Get Started</span>
-                    <ArrowRight className="h-5 w-5 transform transition-transform group-hover:translate-x-1" />
-                  </Button>
-                  <Button
-                    className="bg-zinc-900 text-white hover:bg-zinc-800 rounded-lg px-5 py-6 text-base font-medium transition-all duration-200 border border-zinc-800 flex justify-between"
-                    onClick={closeMenu}
-                  >
-                    Book a Consultation
+                    <ArrowRight className="h-3 w-3" />
                   </Button>
                 </motion.div>
               </motion.nav>

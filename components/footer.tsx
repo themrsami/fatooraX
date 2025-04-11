@@ -10,9 +10,10 @@ export function Footer() {
   return (
     <footer id="contact" className="bg-black border-t border-neutral-900 py-16">
       <div className="container px-4 mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          <div className="md:col-span-1">
-            <FatooraXLogo className="w-32 h-auto mb-6" />
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">          <div className="md:col-span-1">
+            <Link href="/">
+              <FatooraXLogo className="w-32 h-auto mb-6" />
+            </Link>
             <p className="text-neutral-500 text-sm mt-4">Premium financial services for modern businesses.</p>
             <div className="flex space-x-4 mt-6">
               {[
@@ -29,31 +30,35 @@ export function Footer() {
               ))}
             </div>
           </div>
-          <div>
-            <h3 className="text-sm font-medium mb-4 uppercase tracking-wider">Services</h3>
+          <div>            <h3 className="text-sm font-medium mb-4 uppercase tracking-wider">Services</h3>
             <ul className="space-y-3">
               {[
-                "Odoo Implementation",
-                "Process Optimization",
-                "Company Formation",
-                "Accounting Recruitment",
-                "Tax Consultancy",
+                { name: "Odoo Implementation", href: "/#services" },
+                { name: "Process Optimization", href: "/#services" },
+                { name: "Company Formation", href: "/#services" },
+                { name: "Accounting Recruitment", href: "/#services" },
+                { name: "Tax Consultancy", href: "/#services" },
               ].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-neutral-400 hover:text-white text-sm transition-colors">
-                    {item}
+                <li key={item.name}>
+                  <Link href={item.href} className="text-neutral-400 hover:text-white text-sm transition-colors">
+                    {item.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
-          <div>
-            <h3 className="text-sm font-medium mb-4 uppercase tracking-wider">Company</h3>
+          <div>            <h3 className="text-sm font-medium mb-4 uppercase tracking-wider">Company</h3>
             <ul className="space-y-3">
-              {["About", "Careers", "Contact", "Blog", "Privacy Policy"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-neutral-400 hover:text-white text-sm transition-colors">
-                    {item}
+              {[
+                { name: "About", href: "/#about" },
+                { name: "Careers", href: "/careers" },
+                { name: "Contact", href: "/#contact" },
+                { name: "Blog", href: "/blog" },
+                { name: "Privacy Policy", href: "/privacy-policy" }
+              ].map((item) => (
+                <li key={item.name}>
+                  <Link href={item.href} className="text-neutral-400 hover:text-white text-sm transition-colors">
+                    {item.name}
                   </Link>
                 </li>
               ))}

@@ -1,7 +1,8 @@
 "use client"
 
-export function StatsSection() {  return (
-    <section className="py-16 bg-gray-50 dark:bg-black border-y border-gray-200 dark:border-neutral-900">
+export function StatsSection() {
+  return (
+    <section className="py-24 bg-white dark:bg-black">
       <div className="container px-4 mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
@@ -10,9 +11,12 @@ export function StatsSection() {  return (
             { value: "98%", label: "Client Retention" },
             { value: "24/7", label: "Support" },
           ].map((stat, index) => (
-            <div key={index} className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-2">{stat.value}</p>
-              <p className="text-sm text-gray-600 dark:text-neutral-500">{stat.label}</p>
+            <div key={index} className="text-center relative">
+              <p className="text-4xl md:text-6xl text-black font-bold dark:text-white mb-3">{stat.value}</p>
+              <p className="text-base text-gray-600 dark:text-neutral-500">{stat.label}</p>
+              {index < 3 && (
+                <div className="hidden md:block absolute top-1/2 -translate-y-1/2 right-0 w-px h-40 bg-gray-300 dark:bg-neutral-800"></div>
+              )}
             </div>
           ))}
         </div>
