@@ -51,9 +51,6 @@ export function FeaturesSection() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,_var(--tw-gradient-stops))] from-blue-50/20 to-transparent dark:from-blue-900/5 dark:to-transparent"></div>
       <div className="container px-4 mx-auto relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-20">
-          <Badge className="bg-gray-100 dark:bg-neutral-800 text-gray-700 dark:text-neutral-300 hover:bg-gray-200 dark:hover:bg-neutral-800 px-3 py-1 text-xs rounded-full mb-4">
-            WHY CHOOSE US
-          </Badge>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
             Features That Set Us Apart
           </h2>

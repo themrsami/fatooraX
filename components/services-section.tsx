@@ -27,9 +27,6 @@ export function ServicesSection() {
     <section id="services" className="py-24 bg-white dark:bg-neutral-950 pt-24">
       <div className="container px-4 mx-auto">
         <div className="flex flex-col items-center text-center mb-16">
-          <Badge className="bg-zinc-100 text-black hover:bg-zinc-100 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-800 px-3 py-1 text-xs rounded-full mb-4 border border-blue-200 dark:border-neutral-800">
-            Our Expertise
-          </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Premium Services</h2>
           <p className="text-gray-600 dark:text-neutral-400 max-w-2xl text-sm md:text-base">
             Comprehensive financial and operational solutions tailored to elevate your business performance.
@@ -78,7 +75,7 @@ export function ServicesSection() {
             icon="Building"
           />
           <ServiceCard
-            title="Accounting Recruitment"
+            title="Talent Advisory"
             description="Executive search, team structuring, and talent market insights"
             detailedDescription={serviceDetails.recruitment}
             icon="Users"

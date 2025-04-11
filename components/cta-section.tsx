@@ -54,11 +54,6 @@ export function CTASection() {  return (
                     <span className="font-medium text-gray-900 dark:text-white">{feature.text}</span>
                   </div>
                 ))}
-                <div className="pt-6">
-                  <Button className="border border-gray-900 dark:border-white bg-transparent text-gray-900 dark:text-white hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 rounded-none px-6 py-2 mt-4">
-                    View Case Studies <ChevronRight className="h-4 w-4 ml-2" />
-                  </Button>
-                </div>
               </div>
             </div>
           </div>

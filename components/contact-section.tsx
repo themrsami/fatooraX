@@ -45,9 +45,6 @@ export function ContactSection() {
   return (    <section id="contact" className="py-24 bg-white dark:bg-black relative overflow-hidden">
       <div className="container px-4 mx-auto relative z-10">
         <div className="relative max-w-3xl mx-auto text-center mb-20">
-          <Badge className="relative inline-block bg-white dark:bg-black text-black dark:text-white px-4 py-2 text-xs uppercase tracking-wider font-medium border border-gray-200 dark:border-neutral-800 mb-6">
-            CONTACT US
-          </Badge>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-gray-900 dark:text-white leading-tight">
             Get in Touch With Our Team
           </h2>

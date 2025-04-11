@@ -10,9 +10,12 @@ export function Footer() {
   return (
     <footer id="contact" className="bg-black border-t border-neutral-900 py-16">
       <div className="container px-4 mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">          <div className="md:col-span-1">
-            <Link href="/">
-              <FatooraXLogo className="w-32 h-auto mb-6" />
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">          
+          <div className="md:col-span-1">
+            <Link href="/" className="bg-white p-2 rounded-lg inline-block">
+              <div className="bg-black p-4 rounded-lg inline-block -mb-1.5">
+                <FatooraXLogo className="w-32 h-auto" src="/fatooraxgray.svg" />
+              </div>
             </Link>
             <p className="text-neutral-500 text-sm mt-4">Premium financial services for modern businesses.</p>
             <div className="flex space-x-4 mt-6">
@@ -29,15 +32,17 @@ export function Footer() {
                 </Link>
               ))}
             </div>
-          </div>
-          <div>            <h3 className="text-sm font-medium mb-4 uppercase tracking-wider">Services</h3>
+          </div>          <div>            <h3 className="text-sm font-medium mb-4 uppercase tracking-wider">Services</h3>
             <ul className="space-y-3">
               {[
-                { name: "Odoo Implementation", href: "/#services" },
-                { name: "Process Optimization", href: "/#services" },
-                { name: "Company Formation", href: "/#services" },
-                { name: "Accounting Recruitment", href: "/#services" },
-                { name: "Tax Consultancy", href: "/#services" },
+                { name: "Bookkeeping & Accounting", href: "/#services" },
+                { name: "Internal & External Audit", href: "/#services" },
+                { name: "Odoo ERP Implementation", href: "/#services" },
+                { name: "Tax Advisory & Compliance", href: "/#services" },
+                { name: "Wealth Management Advisory", href: "/#services" },
+                { name: "Business Valuation & Advisory", href: "/#services" },
+                { name: "Business Formation & Structuring", href: "/#services" },
+                { name: "Talent Advisory", href: "/#services" },
               ].map((item) => (
                 <li key={item.name}>
                   <Link href={item.href} className="text-neutral-400 hover:text-white text-sm transition-colors">

@@ -2,16 +2,11 @@
 
 import { ExternalLink, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { ClientLogo } from "@/components/client-logo"
 
 export function AboutSection() {  return (    <section id="about" className="pt-32 pb-16 bg-white dark:bg-black relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gray-100/30 to-white/0 dark:from-neutral-800/10 dark:to-black/0"></div>
       <div className="container px-4 mx-auto relative z-10">        {/* Header with diagonal line design */}
         <div className="relative max-w-3xl mx-auto text-center mb-24">
-          <Badge className="relative inline-block bg-white dark:bg-black text-black dark:text-white px-4 py-2 text-xs uppercase tracking-wider font-medium border border-gray-200 dark:border-neutral-800 mb-6">
-            ABOUT US
-          </Badge>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-gray-900 dark:text-white">Advisory That Drives Business Forward</h2>
           <p className="text-gray-600 dark:text-neutral-400 text-base md:text-lg max-w-2xl mx-auto">
             Join the elite businesses that have transformed their operations with FatooraX's premium services.
@@ -43,14 +38,6 @@ export function AboutSection() {  return (    <section id="about" className="pt-
             </div>
           </div>
           <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gray-300 dark:via-neutral-700 to-transparent"></div>
-        </div>
-        
-        {/* Client logos in a minimalist strip */}
-        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16 mb-24 opacity-70 hover:opacity-100 transition-opacity duration-300">
-          <ClientLogo name="TechVision" />
-          <ClientLogo name="Nexus Group" />
-          <ClientLogo name="GlobalFin" />
-          <ClientLogo name="AlphaCore" />
         </div>
         
         {/* Vision & Mission in split design */}

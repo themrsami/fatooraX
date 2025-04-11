@@ -20,7 +20,7 @@ export function Header() {
         setScrolled(false)
       }      
       // Determine active section
-      const sections = ["hero", "services", "about", "features", "clients", "cta-section", "contact"]
+      const sections = ["hero", "services", "about", "features", "cta-section", "contact"]
       
       for (const section of sections) {
         const element = document.getElementById(section)
@@ -60,10 +60,6 @@ export function Header() {
     {
       name: "Services",
       href: "/#services"
-    },
-    {
-      name: "Clients",
-      href: "/#clients"
     },
     {
       name: "Schedule a Demo",
