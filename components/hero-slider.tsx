@@ -51,9 +51,15 @@ export function HeroSlider() {  return (
                 {heroCover.title}
               </span>
               
-              <h2 className="text-3xl font-bold md:text-4xl lg:text-8xl font-light tracking-tight text-white leading-tight mb-6">
-                Fatoora X
-              </h2>
+              <div className="mb-6">
+                <Image 
+                  src="/herologo.svg" 
+                  alt="Fatoora X Logo" 
+                  width={500} 
+                  height={120} 
+                  className="max-w-full"
+                />
+              </div>
               
               <p className="text-gray-200 text-lg md:text-xl leading-relaxed mb-8">
                 Your trusted partner in <a href="#services" className="underline decoration-blue-400 hover:bg-blue-400 hover:text-white hover:no-underline transition-all duration-200 px-1">financial</a>, <a href="#services" className="underline decoration-blue-400 hover:bg-blue-400 hover:text-white hover:no-underline transition-all duration-200 px-1">compliance</a>, <a href="#services" className="underline decoration-blue-400 hover:bg-blue-400 hover:text-white hover:no-underline transition-all duration-200 px-1">accounting</a> and <a href="#services" className="underline decoration-blue-400 hover:bg-blue-400 hover:text-white hover:no-underline transition-all duration-200 px-1">business consulting</a> services.
