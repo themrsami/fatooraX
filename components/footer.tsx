@@ -76,7 +76,7 @@ export function Footer() {
               <Input
                 type="email"
                 placeholder="Your email"
-                className="bg-neutral-900 border-neutral-800 rounded-l-md focus:ring-0 focus:border-neutral-700 h-10"
+                className="bg-neutral-900 text-white border-neutral-800 rounded-l-md focus:ring-0 focus:border-neutral-700 h-10"
               />
               <Button className="rounded-l-none bg-white text-black hover:bg-neutral-200 h-10">Subscribe</Button>
             </div>

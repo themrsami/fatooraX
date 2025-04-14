@@ -71,9 +71,6 @@ export function AboutSection() {  return (    <section id="about" className="pt-
                 <p className="text-gray-600 dark:text-neutral-400 mb-8">
                   Comprising former CFOs, Big Four consultants, ERP architects, and investment advisors, our team brings decades of hands-on experience in financial management and transformation.
                 </p>
-                <Button className="border border-gray-900 dark:border-white bg-transparent text-gray-900 dark:text-white hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 rounded-none px-6 py-2">
-                  Meet Our Team <ExternalLink className="h-4 w-4 ml-2" />
-                </Button>
               </div>
             </div>
             

@@ -47,7 +47,7 @@ export function HeroSlider() {  return (
         {/* Text overlay on the dimmed left side */}
         <div className="absolute inset-0 z-20 flex items-center">
           <div className="container mt-40 mx-auto px-4">
-            <div className="max-w-lg">              <span className="text-white text-xs tracking-wide rounded-none uppercase font-medium shadow-lg mb-6">
+            <div className="max-w-lg">              <span className="text-white text-lg md:text-xl tracking-wide rounded-none font-medium shadow-lg mb-6">
                 {heroCover.title}
               </span>
               

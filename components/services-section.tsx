@@ -130,9 +130,6 @@ export function ServicesSection() {
         {/* Sectors We Serve Section */}
         <div className="mt-24">
           <div className="text-center mb-16">
-            <Badge className="bg-zinc-100 text-black hover:bg-zinc-100 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-800 px-3 py-1 text-xs rounded-full mb-4 border border-blue-200 dark:border-neutral-800">
-              SECTORS WE SERVE
-            </Badge>
             <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
               Navigating Complex Environments Across Sectors
             </h3>
