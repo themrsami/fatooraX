@@ -13,7 +13,7 @@ export function Footer() {
       <div className="container px-4 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">          
           <div className="md:col-span-1">
-            <Link href="/" className="bg-white p-2 rounded-lg inline-block">
+            <Link href="/" className="p-2 rounded-lg inline-block">
               <div className="bg-black p-4 rounded-lg inline-block -mb-1.5">
                 <FatooraXLogo className="w-32 h-auto" src="/fatooraxgray.svg" />
               </div>

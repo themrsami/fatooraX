@@ -154,7 +154,7 @@ export function ServicesSection() {
             ))}
           </div>
           
-          <div className="bg-blue-50 dark:bg-blue-950/30 p-8 rounded-lg">
+          <div className="bg-gray-50 dark:bg-gray-100 p-8 rounded-lg">
             <h4 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Tailored Approach</h4>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               Each industry has its own financial rhythm. We tailor our solutions to reflect your sector's regulatory requirements, operational models, and long-term goals.
