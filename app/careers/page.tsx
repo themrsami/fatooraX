@@ -1,37 +1,46 @@
 "use client"
 
-import { ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { ResumeSubmissionForm } from "@/components/resume-submission-form";
+import { useState } from "react";
 
 export default function CareersPage() {
-  // Sample job listings
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  // Updated job listings
   const jobListings = [
     {
-      title: "Financial Analyst",
+      title: "Sales Executive – Client Acquisition",
       location: "Dubai, UAE",
       type: "Full-time",
-      description: "Join our financial analysis team to help clients make data-driven decisions that impact their bottom line.",
+      description: "Drive business growth by identifying new opportunities, building strong client relationships, and promoting our suite of financial and ERP services to prospective customers.",
       requirements: [
-        "Bachelor's degree in Finance, Accounting, or related field",
-        "3+ years of experience in financial analysis",
-        "Proficiency in financial modeling and data analysis",
-        "Strong communication and presentation skills",
-      ]
+        "Proven track record in B2B sales or client acquisition",
+        "3+ years of experience in selling bookkeeping, accounting, audit, or ERP implementation services",
+        "Excellent communication and negotiation skills",
+        "Ability to understand client needs and translate them into tailored solutions",
+        "Self-motivated, target-driven, and results-oriented",
+      ],
+      applyLink: "#" // Placeholder link
     },
     {
-      title: "Senior ERP Consultant",
-      location: "Abu Dhabi, UAE",
+      title: "Accountant",
+      location: "Dubai, UAE",
       type: "Full-time",
-      description: "Lead the implementation and optimization of Odoo ERP systems for our enterprise clients.",
+      description: "Support our finance operations with accurate bookkeeping, timely reconciliations, and sound financial reporting aligned with local and international accounting standards.",
       requirements: [
-        "5+ years of experience with Odoo ERP implementation",
-        "Strong understanding of business processes and financial operations",
-        "Technical background with customization capabilities",
-        "Project management experience",
-      ]
+        "Bachelor’s degree in Accounting or Finance",
+        "3+ years of experience in accounting or audit",
+        "Proficiency in accounting software (preferably Odoo or similar ERP)",
+        "Strong understanding of IFRS and UAE VAT regulations",
+        "Excellent attention to detail and organizational skills",
+      ],
+      applyLink: "#" // Placeholder link
     },
     {
       title: "Tax Advisory Specialist",
@@ -43,25 +52,36 @@ export default function CareersPage() {
         "4+ years experience in tax advisory or consulting",
         "Thorough knowledge of GCC tax regulations",
         "Strong analytical and problem-solving skills",
-      ]
+      ],
+      applyLink: "#" // Placeholder link
     }
-  ]
+  ];
+
+  const expertiseAreas = [
+    "Accounting & Bookkeeping",
+    "Sales & Client Acquisition",
+    "Financial Management & Advisory",
+    "ERP Implementation & Development",
+    "Audit & Compliance",
+    "Tax Advisory & Planning",
+    "Business Valuation & Strategy",
+    "Technology & Automation",
+    "Operations & Project Management"
+  ];
 
   return (
     <main className="min-h-screen bg-white dark:bg-black">
       <Header />
-      
-      {/* Hero section */}
+        {/* Hero section */}
       <section className="pt-32 pb-16 bg-white dark:bg-black relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gray-100/30 to-white/0 dark:from-neutral-800/10 dark:to-black/0"></div>
+        <div className="absolute inset-0 opacity-10 bg-grid-pattern dark:opacity-5"></div>
         
-          <div className="relative max-w-4xl mx-auto text-center mb-16">
+          <div className="relative max-w-4xl mx-auto text-center mb-16 px-4">
             <div className="absolute left-0 right-0 top-1/2 h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-neutral-700 to-transparent -z-10"></div>
-            <Badge className="relative inline-block bg-white dark:bg-black text-black dark:text-white px-4 py-2 text-xs uppercase tracking-wider font-medium border border-gray-200 dark:border-neutral-800 mb-12">
-              CAREERS
-            </Badge>
+            <Badge className="inline-block mb-6 px-4 py-1.5 text-xs uppercase tracking-wider font-medium border border-gray-200 dark:border-neutral-800 bg-white/80 dark:bg-black/80 backdrop-blur-sm">Careers</Badge>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 text-gray-900 dark:text-white leading-tight">
-              Build the Future of <br />Finance With Us
+              Build Your Future <br />With Us
             </h1>
             <p className="text-gray-600 dark:text-neutral-400 text-base md:text-xl max-w-2xl mx-auto leading-relaxed">
               Fatoora X is always looking for professionals who combine critical thinking with practical action. If you're ready to make an impact in a high-growth, high-integrity environment, we'd love to hear from you.
@@ -69,46 +89,50 @@ export default function CareersPage() {
           </div>
       </section>
       
-      {/* Values section */}
-      <section className="py-24 bg-gray-50 dark:bg-neutral-950 border-y border-gray-200 dark:border-neutral-900">
+      {/* Values section - Updated */}
+      <section className="py-24 bg-gray-50 dark:bg-neutral-950 border-y border-gray-200 dark:border-neutral-900 relative">        <div className="absolute left-0 w-1/3 h-full bg-gradient-to-r from-gray-50/20 to-transparent dark:from-neutral-900/10 dark:to-transparent opacity-70"></div>
+        <div className="absolute right-0 w-1/3 h-full bg-gradient-to-l from-gray-50/20 to-transparent dark:from-neutral-900/10 dark:to-transparent opacity-70"></div>
+        
+        <div className="container px-4 mx-auto relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900 dark:text-white relative inline-block">
+              Build a Career That Matters
+              <div className="absolute -bottom-3 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent"></div>
+            </h2>
+            <div className="bg-white/70 dark:bg-black/40 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm">
+              <p className="text-gray-600 dark:text-neutral-400 text-lg leading-relaxed">
+                At Fatoora X, we don't just offer jobs — we offer the opportunity to shape industries, challenge conventions, and keep growing. Our culture is built on intellectual curiosity, shared purpose, and a commitment to excellence. We invest deeply in our people because we believe extraordinary outcomes begin with extraordinary individuals. Whether you're solving complex business problems, driving digital transformation, or advising tomorrow's leaders, your work here will make a difference.
+              </p>
+              <p className="text-gray-600 dark:text-neutral-400 text-lg leading-relaxed mt-4 italic font-medium">
+                Join us — and redefine what's possible.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>      {/* Areas of Expertise Section - New */}
+      <section className="py-24 bg-white dark:bg-black">
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">Why Join Our Team</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">Areas Where You Can Make an Impact</h2>
             <p className="text-gray-600 dark:text-neutral-400">
-              At Fatoora X, we're building a culture where professionals thrive through meaningful work, continuous growth, and impactful collaboration.
+              Leverage your expertise across a diverse range of critical business functions.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Purpose-Driven Work",
-                description: "Your skills will directly impact businesses across the region, helping them achieve financial clarity and operational excellence."
-              },
-              {
-                title: "Continuous Growth",
-                description: "We invest in your professional development with mentorship, training opportunities, and exposure to diverse client challenges."
-              },
-              {
-                title: "Collaborative Environment",
-                description: "Work alongside industry experts in a supportive setting where innovation and knowledge-sharing are encouraged."
-              }
-            ].map((value, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {expertiseAreas.map((area, index) => (
               <div 
-                key={index}
-                className="bg-white dark:bg-neutral-900 p-8 border border-gray-200 dark:border-neutral-800 relative"
+                key={index} 
+                className="bg-gray-50 dark:bg-neutral-950 p-6 border border-gray-200 dark:border-neutral-800 text-center rounded-lg hover:shadow-md transition-all duration-300 hover:border-gray-300 dark:hover:border-neutral-700"
               >
-                <div className="h-1 w-12 bg-gray-900 dark:bg-white absolute top-0 left-0"></div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">{value.title}</h3>
-                <p className="text-gray-600 dark:text-neutral-400">{value.description}</p>
+                <p className="font-medium text-gray-800 dark:text-neutral-200">{area}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
       
-      {/* Current openings */}
-      <section className="py-24 bg-white dark:bg-black">
+      {/* Current openings - Updated Rendering */}
+      <section className="py-24 bg-gray-50 dark:bg-neutral-950 border-t border-gray-200 dark:border-neutral-900">
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">Current Openings</h2>
@@ -117,63 +141,74 @@ export default function CareersPage() {
             </p>
           </div>
           
-          <div className="space-y-8 max-w-5xl mx-auto">
-            {jobListings.map((job, index) => (
-              <div 
+          <div className="space-y-8 max-w-4xl mx-auto">
+            {jobListings.map((job, index) => (              <div 
                 key={index}
-                className="border border-gray-200 dark:border-neutral-800 hover:border-gray-900 dark:hover:border-white transition-colors duration-300"
+                className="bg-white dark:bg-black border border-gray-200 dark:border-neutral-800 p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <div className="p-8">
-                  <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
-                    <div>
-                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{job.title}</h3>
-                      <div className="flex items-center text-gray-600 dark:text-neutral-400 text-sm">
-                        <span>{job.location}</span>
-                        <span className="mx-2">•</span>
-                        <span>{job.type}</span>
-                      </div>
-                    </div>
-                    <Button className="mt-4 md:mt-0 border border-gray-900 dark:border-white bg-transparent text-gray-900 dark:text-white hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 rounded-none px-6 py-3 text-base font-medium flex items-center group">
-                      <span>Apply Now</span>
-                      <ArrowRight className="ml-2 h-4 w-4 transform transition-transform group-hover:translate-x-1" />
-                    </Button>
-                  </div>
-                  
-                  <p className="text-gray-600 dark:text-neutral-400 mb-6">{job.description}</p>
-                  
+                <div className="flex flex-col md:flex-row justify-between md:items-start mb-6">
                   <div>
-                    <h4 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-3">Requirements</h4>
-                    <ul className="space-y-2">
-                      {job.requirements.map((req, i) => (
-                        <li key={i} className="flex items-start">
-                          <div className="h-px w-4 bg-gray-400 dark:bg-neutral-500 mt-3 mr-3"></div>
-                          <span className="text-gray-600 dark:text-neutral-400">{req}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{job.title}</h3>
+                    <div className="flex items-center">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-neutral-900 text-gray-800 dark:text-neutral-300">
+                        {job.location}
+                      </span>                      <span className="mx-2 text-gray-300 dark:text-neutral-700">•</span>
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-50 dark:bg-neutral-900/50 text-gray-800 dark:text-gray-300">
+                        {job.type}
+                      </span>
+                    </div>
                   </div>
+                  <Button asChild variant="outline" className="mt-4 md:mt-0 w-full md:w-auto shrink-0 hover:bg-gray-100 dark:hover:bg-neutral-900">
+                    <Link href={job.applyLink}>
+                      Apply Now <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+                
+                <p className="text-gray-600 dark:text-neutral-400 mb-6 border-l-4 border-gray-200 dark:border-neutral-800 pl-4 italic">{job.description}</p>
+                
+                <div className="bg-gray-50 dark:bg-neutral-950 p-5 rounded-lg">
+                  <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-700 dark:text-neutral-300 mb-3">Requirements</h4>
+                  <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-neutral-400">
+                    {job.requirements.map((req, reqIndex) => (
+                      <li key={reqIndex} className="pl-2">{req}</li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
-      
-      {/* Application CTA */}
-      <section className="relative border-t border-b border-gray-200 dark:border-neutral-800 py-20 bg-white dark:bg-black text-center">
-        <div className="absolute -top-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-neutral-700 to-transparent"></div>
-        <div className="absolute -bottom-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-neutral-700 to-transparent"></div>
+        {/* Application CTA with Resume Submission Form */}
+      <section className="relative py-24 bg-white dark:bg-black text-center overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-100/50 to-white/0 dark:from-neutral-800/20 dark:to-black/0"></div>
         
-        <div className="container px-4 mx-auto">
-          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 text-gray-900 dark:text-white max-w-3xl mx-auto">
-            Don't see a role that matches your profile?
-          </h3>
-          <p className="text-gray-600 dark:text-neutral-400 mb-8 text-lg max-w-2xl mx-auto">
-            We're always looking for exceptional talent. Send us your resume and let us know how you can contribute to our team.
-          </p>
-          <Button className="border-2 border-gray-900 dark:border-white bg-gray-900 dark:bg-white text-white dark:text-black hover:bg-transparent hover:text-gray-900 dark:hover:bg-transparent dark:hover:text-white transition-all duration-300 rounded-none px-8 py-4 text-lg font-medium">
-            Submit Your Application
-          </Button>
+        <div className="container px-4 mx-auto relative z-10">
+          <div className="max-w-2xl mx-auto">
+            <div className="h-12 w-12 mx-auto mb-6 rounded-full bg-gray-100 dark:bg-neutral-900 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-gray-600 dark:text-neutral-400">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-white">Don't See the Right Fit?</h2>
+            <p className="text-gray-600 dark:text-neutral-400 mb-8 max-w-xl mx-auto">
+              We're always interested in connecting with talented individuals. Submit your resume, and we'll keep you in mind for future opportunities.
+            </p>
+            <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+              <DialogTrigger asChild>
+                <Button size="lg" className="px-8 py-6 h-auto text-base font-medium bg-gray-900 hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-100">
+                  Submit Your Resume
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md md:max-w-lg lg:max-w-xl bg-white dark:bg-black border-gray-200 dark:border-neutral-800 p-0">
+                <DialogTitle className="sr-only">Submit Your Resume</DialogTitle>
+                <ResumeSubmissionForm />
+              </DialogContent>
+            </Dialog>
+          </div>
         </div>
       </section>
       
