@@ -76,11 +76,10 @@ export function ContactSection() {
                 <div className="h-10 w-10 rounded-none bg-gray-100 dark:bg-neutral-800 flex items-center justify-center mr-4 flex-shrink-0">
                   <Phone className="h-5 w-5 text-gray-700 dark:text-neutral-300" />
                 </div>
-                <div>
-                  <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-1">Phone Number</h4>
+                <div>                  <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-1">Phone Number</h4>
                   <p className="text-gray-600 dark:text-neutral-400 text-sm">
-                    <a href="tel:+97144567890" className="hover:text-black dark:hover:text-white transition-colors">
-                      +971 4 456 7890
+                    <a href="tel:+97157804545" className="hover:text-black dark:hover:text-white transition-colors">
+                      +971 57804545
                     </a>
                   </p>
                 </div>

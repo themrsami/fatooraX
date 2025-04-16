@@ -9,6 +9,13 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { toast } from "@/components/ui/use-toast"
 import { Loader2, CheckCircle2, XCircle, Upload } from "lucide-react"
+import { 
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from "@/components/ui/select"
 import {
   Form,
   FormControl,
@@ -24,6 +31,9 @@ const ACCEPTED_FILE_TYPES = ["application/pdf"]
 const resumeFormSchema = z.object({
   fullName: z.string().min(2, {
     message: "Full name must be at least 2 characters.",
+  }),
+  expertiseArea: z.string({
+    required_error: "Please select an area of expertise.",
   }),
   email: z.string().email({
     message: "Please enter a valid email address.",
@@ -46,14 +56,25 @@ const resumeFormSchema = z.object({
 
 type ResumeFormValues = z.infer<typeof resumeFormSchema>
 
-export function ResumeSubmissionForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
+export function ResumeSubmissionForm() {  const [isSubmitting, setIsSubmitting] = useState(false)
   const [fileName, setFileName] = useState<string | null>(null)
+  
+  const expertiseAreas = [
+    "Accounting & Bookkeeping",
+    "Sales & Client Acquisition",
+    "Financial Management & Advisory",
+    "ERP Implementation & Development",
+    "Audit & Compliance",
+    "Tax Advisory & Planning",
+    "Business Valuation & Strategy",
+    "Technology & Automation",
+    "Operations & Project Management"
+  ]
 
   const form = useForm<ResumeFormValues>({
-    resolver: zodResolver(resumeFormSchema),
-    defaultValues: {
+    resolver: zodResolver(resumeFormSchema),    defaultValues: {
       fullName: "",
+      expertiseArea: "",
       email: "",
       phone: "",
     },
@@ -62,9 +83,9 @@ export function ResumeSubmissionForm() {
   async function onSubmit(data: ResumeFormValues) {
     setIsSubmitting(true)
     
-    try {
-      const formData = new FormData()
+    try {      const formData = new FormData()
       formData.append("fullName", data.fullName)
+      formData.append("expertiseArea", data.expertiseArea)
       formData.append("email", data.email)
       formData.append("phone", data.phone)
       formData.append("resume", data.resume[0])
@@ -111,8 +132,7 @@ export function ResumeSubmissionForm() {
       <h3 className="text-xl font-bold mb-6 text-gray-900 dark:text-white text-center sm:text-left">Submit Your Resume</h3>
       
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-          <FormField
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">          <FormField
             control={form.control}
             name="fullName"
             render={({ field }) => (
@@ -125,6 +145,35 @@ export function ResumeSubmissionForm() {
                     className="border-gray-200 dark:border-neutral-800 bg-white dark:bg-black focus:ring-1 focus:ring-gray-300 dark:focus:ring-neutral-700" 
                   />
                 </FormControl>
+                <FormMessage className="text-red-500" />
+              </FormItem>
+            )}
+          />
+          
+          <FormField
+            control={form.control}
+            name="expertiseArea"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-gray-700 dark:text-gray-300">Area of Expertise</FormLabel>
+                <Select 
+                  onValueChange={field.onChange} 
+                  defaultValue={field.value} 
+                  value={field.value}
+                >
+                  <FormControl>
+                    <SelectTrigger className="border-gray-200 dark:border-neutral-800 bg-white dark:bg-black focus:ring-1 focus:ring-gray-300 dark:focus:ring-neutral-700">
+                      <SelectValue placeholder="Select an area where you can make an impact" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent className="bg-white dark:bg-black border-gray-200 dark:border-neutral-800">
+                    {expertiseAreas.map((area) => (
+                      <SelectItem key={area} value={area} className="focus:bg-gray-100 dark:focus:bg-neutral-900">
+                        {area}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
                 <FormMessage className="text-red-500" />
               </FormItem>
             )}

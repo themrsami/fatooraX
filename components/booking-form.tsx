@@ -126,29 +126,23 @@ export function BookingForm() {
   }
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
+    <Dialog open={open} onOpenChange={setOpen}>      <DialogTrigger asChild>
         <Button className="bg-white text-black hover:bg-black hover:text-white rounded-none px-8 py-6 text-base font-medium tracking-wide transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black shadow-lg shadow-zinc-900/20 group">
           <span>Book a Consultation</span>
           <ArrowRight className="ml-2 h-4 w-4 transform transition-transform group-hover:translate-x-1" />
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[550px] bg-black border border-zinc-800 rounded-xl shadow-xl p-0 overflow-hidden">
-        <DialogClose className="absolute right-4 top-4 rounded-full p-1 text-zinc-400 hover:text-white hover:bg-zinc-800 focus:ring-white">
-          <X className="h-4 w-4" />
-          <span className="sr-only">Close</span>
-        </DialogClose>
-        
-        {success ? (
+      <DialogContent className="sm:max-w-[550px] bg-white dark:bg-black border border-gray-200 dark:border-zinc-800 rounded-xl shadow-xl p-0 overflow-hidden">
+          {success ? (
           <div className="flex flex-col items-center justify-center py-16 px-6">
-            <div className="h-20 w-20 rounded-full bg-white flex items-center justify-center mb-6 animate-pulse">
-              <Check className="h-10 w-10 text-black" />
+            <div className="h-20 w-20 rounded-full bg-gray-900 dark:bg-white flex items-center justify-center mb-6 animate-pulse">
+              <Check className="h-10 w-10 text-white dark:text-black" />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2">Booking Confirmed</h3>
-            <p className="text-zinc-400 text-center max-w-md mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Booking Confirmed</h3>
+            <p className="text-gray-600 dark:text-zinc-400 text-center max-w-md mb-8">
               Thank you for scheduling a consultation. We'll reach out to confirm your appointment soon.
             </p>
-            <div className="flex items-center space-x-2 text-zinc-500 text-sm border-t border-zinc-800 pt-6 w-full justify-center">
+            <div className="flex items-center space-x-2 text-gray-500 dark:text-zinc-500 text-sm border-t border-gray-200 dark:border-zinc-800 pt-6 w-full justify-center">
               <CalendarIcon className="h-4 w-4" />
               <span>{date ? format(date, "MMMM d, yyyy") : ""}</span>
               <span>•</span>
@@ -157,11 +151,11 @@ export function BookingForm() {
             </div>
           </div>
         ) : (
-          <>            <div className="bg-zinc-900 px-6 py-4 border-b border-zinc-800">
+          <>            <div className="bg-gray-50 dark:bg-zinc-900 px-6 py-4 border-b border-gray-200 dark:border-zinc-800">
               <DialogHeader>
                 <div className="mb-4">
-                  <DialogTitle className="text-xl font-semibold text-white flex items-center">
-                    <div className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center mr-3 font-bold text-sm">
+                  <DialogTitle className="text-xl font-semibold text-gray-900 dark:text-white flex items-center">
+                    <div className="w-8 h-8 rounded-full bg-gray-900 text-white dark:bg-white dark:text-black flex items-center justify-center mr-3 font-bold text-sm">
                       {step}
                     </div>
                     {step === 1 && "Your Information"}
@@ -172,112 +166,109 @@ export function BookingForm() {
                 
                 <div className="flex items-center justify-between w-full mt-2">
                   <div className="flex flex-col items-center">
-                    <div className={`w-4 h-4 rounded-full ${step === 1 ? "bg-white" : step > 1 ? "bg-white" : "bg-zinc-700"} mb-1`}></div>
-                    <span className={`text-xs ${step === 1 ? "text-white" : step > 1 ? "text-white" : "text-zinc-500"}`}>Details</span>
+                    <div className={`w-4 h-4 rounded-full ${step === 1 ? "bg-gray-900" : step > 1 ? "bg-gray-900" : "bg-gray-300"} ${step === 1 ? "dark:bg-white" : step > 1 ? "dark:bg-white" : "dark:bg-zinc-700"} mb-1`}></div>
+                    <span className={`text-xs ${step === 1 ? "text-gray-900" : step > 1 ? "text-gray-900" : "text-gray-500"} ${step === 1 ? "dark:text-white" : step > 1 ? "dark:text-white" : "dark:text-zinc-500"}`}>Details</span>
                   </div>
-                  <div className={`h-0.5 flex-1 mx-2 ${step > 1 ? "bg-white" : "bg-zinc-700"}`}></div>
+                  <div className={`h-0.5 flex-1 mx-2 ${step > 1 ? "bg-gray-900 dark:bg-white" : "bg-gray-300 dark:bg-zinc-700"}`}></div>
                   <div className="flex flex-col items-center">
-                    <div className={`w-4 h-4 rounded-full ${step === 2 ? "bg-white" : step > 2 ? "bg-white" : "bg-zinc-700"} mb-1`}></div>
-                    <span className={`text-xs ${step === 2 ? "text-white" : step > 2 ? "text-white" : "text-zinc-500"}`}>Service</span>
+                    <div className={`w-4 h-4 rounded-full ${step === 2 ? "bg-gray-900" : step > 2 ? "bg-gray-900" : "bg-gray-300"} ${step === 2 ? "dark:bg-white" : step > 2 ? "dark:bg-white" : "dark:bg-zinc-700"} mb-1`}></div>
+                    <span className={`text-xs ${step === 2 ? "text-gray-900" : step > 2 ? "text-gray-900" : "text-gray-500"} ${step === 2 ? "dark:text-white" : step > 2 ? "dark:text-white" : "dark:text-zinc-500"}`}>Service</span>
                   </div>
-                  <div className={`h-0.5 flex-1 mx-2 ${step > 2 ? "bg-white" : "bg-zinc-700"}`}></div>
+                  <div className={`h-0.5 flex-1 mx-2 ${step > 2 ? "bg-gray-900 dark:bg-white" : "bg-gray-300 dark:bg-zinc-700"}`}></div>
                   <div className="flex flex-col items-center">
-                    <div className={`w-4 h-4 rounded-full ${step === 3 ? "bg-white" : "bg-zinc-700"} mb-1`}></div>
-                    <span className={`text-xs ${step === 3 ? "text-white" : "text-zinc-500"}`}>Schedule</span>
+                    <div className={`w-4 h-4 rounded-full ${step === 3 ? "bg-gray-900 dark:bg-white" : "bg-gray-300 dark:bg-zinc-700"} mb-1`}></div>
+                    <span className={`text-xs ${step === 3 ? "text-gray-900 dark:text-white" : "text-gray-500 dark:text-zinc-500"}`}>Schedule</span>
                   </div>
                 </div>
               </DialogHeader>
             </div>
             
-            <form onSubmit={handleSubmit} className="px-6 py-6">
-              {step === 1 && (
+            <form onSubmit={handleSubmit} className="px-6 py-6">              {step === 1 && (
                 <div className="space-y-6">
-                  <DialogDescription className="text-zinc-400 mb-6">
+                  <DialogDescription className="text-gray-600 dark:text-zinc-400 mb-6">
                     Tell us about yourself so we can personalize your consultation experience.
                   </DialogDescription>
                 
                   <div className="space-y-4">
                     <div className="space-y-2">
-                      <Label htmlFor="name" className="text-zinc-300 font-medium text-sm">Full Name</Label>
+                      <Label htmlFor="name" className="text-gray-700 dark:text-zinc-300 font-medium text-sm">Full Name</Label>
                       <div className="relative">
                         <Input 
                           id="name" 
                           placeholder="John Smith" 
-                          className="bg-zinc-900 border-zinc-700 pl-10 h-12 rounded-lg focus:border-white focus:ring-white text-white"
+                          className="bg-white border-gray-200 dark:bg-zinc-900 dark:border-zinc-700 pl-10 h-12 rounded-lg focus:border-gray-400 focus:ring-gray-400 dark:focus:border-white dark:focus:ring-white text-gray-900 dark:text-white"
                           required
                           value={formData.name}
                           onChange={handleInputChange}
                         />
-                        <User className="absolute left-3 top-3.5 h-5 w-5 text-zinc-500" />
+                        <User className="absolute left-3 top-3.5 h-5 w-5 text-gray-500 dark:text-zinc-500" />
                       </div>
                     </div>
-                    
-                    <div className="space-y-2">
-                      <Label htmlFor="email" className="text-zinc-300 font-medium text-sm">Email Address</Label>
+                      <div className="space-y-2">
+                      <Label htmlFor="email" className="text-gray-700 dark:text-zinc-300 font-medium text-sm">Email Address</Label>
                       <div className="relative">
                         <Input 
                           id="email" 
                           type="email" 
                           placeholder="your@email.com" 
-                          className="bg-zinc-900 border-zinc-700 pl-10 h-12 rounded-lg focus:border-white focus:ring-white text-white"
+                          className="bg-white border-gray-200 dark:bg-zinc-900 dark:border-zinc-700 pl-10 h-12 rounded-lg focus:border-gray-400 focus:ring-gray-400 dark:focus:border-white dark:focus:ring-white text-gray-900 dark:text-white"
                           required
                           value={formData.email}
                           onChange={handleInputChange}
                         />
-                        <Mail className="absolute left-3 top-3.5 h-5 w-5 text-zinc-500" />
+                        <Mail className="absolute left-3 top-3.5 h-5 w-5 text-gray-500 dark:text-zinc-500" />
                       </div>
                     </div>
                     
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="phone" className="text-zinc-300 font-medium text-sm">Phone Number</Label>
+                        <Label htmlFor="phone" className="text-gray-700 dark:text-zinc-300 font-medium text-sm">Phone Number</Label>
                         <div className="relative">
                           <Input 
                             id="phone" 
                             placeholder="+1 (555) 000-0000" 
-                            className="bg-zinc-900 border-zinc-700 pl-10 h-12 rounded-lg focus:border-white focus:ring-white text-white"
+                            className="bg-white border-gray-200 dark:bg-zinc-900 dark:border-zinc-700 pl-10 h-12 rounded-lg focus:border-gray-400 focus:ring-gray-400 dark:focus:border-white dark:focus:ring-white text-gray-900 dark:text-white"
                             required
                             value={formData.phone}
                             onChange={handleInputChange}
                           />
-                          <Phone className="absolute left-3 top-3.5 h-5 w-5 text-zinc-500" />
+                          <Phone className="absolute left-3 top-3.5 h-5 w-5 text-gray-500 dark:text-zinc-500" />
                         </div>
                       </div>
                       
                       <div className="space-y-2">
-                        <Label htmlFor="company" className="text-zinc-300 font-medium text-sm">Company Name</Label>
+                        <Label htmlFor="company" className="text-gray-700 dark:text-zinc-300 font-medium text-sm">Company Name</Label>
                         <div className="relative">
                           <Input 
                             id="company" 
                             placeholder="Acme Inc." 
-                            className="bg-zinc-900 border-zinc-700 pl-10 h-12 rounded-lg focus:border-white focus:ring-white text-white"
+                            className="bg-white border-gray-200 dark:bg-zinc-900 dark:border-zinc-700 pl-10 h-12 rounded-lg focus:border-gray-400 focus:ring-gray-400 dark:focus:border-white dark:focus:ring-white text-gray-900 dark:text-white"
                             value={formData.company}
                             onChange={handleInputChange}
                           />
-                          <Building className="absolute left-3 top-3.5 h-5 w-5 text-zinc-500" />
+                          <Building className="absolute left-3 top-3.5 h-5 w-5 text-gray-500 dark:text-zinc-500" />
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               )}
-              
-              {step === 2 && (
+                {step === 2 && (
                 <div className="space-y-6">
-                  <DialogDescription className="text-zinc-400 mb-6">
+                  <DialogDescription className="text-gray-600 dark:text-zinc-400 mb-6">
                     Tell us about the services you're interested in discussing.
                   </DialogDescription>
                 
                   <div className="space-y-6">
                     <div className="space-y-2">
-                      <Label htmlFor="service" className="text-zinc-300 font-medium text-sm">Service Type</Label>
+                      <Label htmlFor="service" className="text-gray-700 dark:text-zinc-300 font-medium text-sm">Service Type</Label>
                       <Popover open={serviceOpen} onOpenChange={setServiceOpen}>
                         <PopoverTrigger asChild>
                           <Button
                             variant="outline"
                             role="combobox"
                             aria-expanded={serviceOpen}
-                            className="w-full justify-between bg-zinc-900 border-zinc-700 text-zinc-300 hover:bg-zinc-800 h-12 rounded-lg focus:border-white focus:ring-white"
+                            className="w-full justify-between bg-white border-gray-200 text-gray-700 hover:bg-gray-50 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800 h-12 rounded-lg focus:border-gray-400 focus:ring-gray-400 dark:focus:border-white dark:focus:ring-white"
                           >
                             {service
                               ? serviceTypes.find((serviceType) => serviceType.value === service)?.label
@@ -285,9 +276,9 @@ export function BookingForm() {
                             <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                           </Button>
                         </PopoverTrigger>
-                        <PopoverContent className="w-full p-0 bg-zinc-900 border-zinc-700 rounded-lg shadow-xl">
+                        <PopoverContent className="w-full p-0 bg-white border-gray-200 dark:bg-zinc-900 dark:border-zinc-700 rounded-lg shadow-xl">
                           <Command className="bg-transparent">
-                            <CommandInput placeholder="Search services..." className="text-zinc-200" />
+                            <CommandInput placeholder="Search services..." className="text-gray-800 dark:text-zinc-200" />
                             <CommandEmpty>No service found.</CommandEmpty>
                             <CommandGroup className="max-h-60 overflow-y-auto">
                               {serviceTypes.map((serviceType) => (
@@ -298,11 +289,11 @@ export function BookingForm() {
                                     setService(currentValue)
                                     setServiceOpen(false)
                                   }}
-                                  className="text-zinc-200 hover:bg-zinc-800"
+                                  className="text-gray-800 hover:bg-gray-100 dark:text-zinc-200 dark:hover:bg-zinc-800"
                                 >
                                   <Check
                                     className={cn(
-                                      "mr-2 h-4 w-4 text-white",
+                                      "mr-2 h-4 w-4 text-gray-900 dark:text-white",
                                       service === serviceType.value ? "opacity-100" : "opacity-0"
                                     )}
                                   />
@@ -316,67 +307,66 @@ export function BookingForm() {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="message" className="text-zinc-300 font-medium text-sm">Additional Details</Label>
+                      <Label htmlFor="message" className="text-gray-700 dark:text-zinc-300 font-medium text-sm">Additional Details</Label>
                       <div className="relative">
                         <Textarea 
                           id="message" 
                           placeholder="Tell us about your specific needs and what you'd like to discuss..." 
-                          className="min-h-32 bg-zinc-900 border-zinc-700 pl-10 pt-3 rounded-lg focus:border-white focus:ring-white text-white"
+                          className="min-h-32 bg-white border-gray-200 dark:bg-zinc-900 dark:border-zinc-700 pl-10 pt-3 rounded-lg focus:border-gray-400 focus:ring-gray-400 dark:focus:border-white dark:focus:ring-white text-gray-900 dark:text-white"
                           value={formData.message}
                           onChange={handleInputChange}
                         />
-                        <MessageSquare className="absolute left-3 top-3 h-5 w-5 text-zinc-500" />
+                        <MessageSquare className="absolute left-3 top-3 h-5 w-5 text-gray-500 dark:text-zinc-500" />
                       </div>
                     </div>
                   </div>
                 </div>
               )}
-              
-              {step === 3 && (
+                {step === 3 && (
                 <div className="space-y-6">
-                  <DialogDescription className="text-zinc-400 mb-6">
+                  <DialogDescription className="text-gray-600 dark:text-zinc-400 mb-6">
                     Select your preferred date and time for the consultation.
                   </DialogDescription>
                 
                   <div className="space-y-6">
                     <div className="space-y-2">
-                      <Label htmlFor="date" className="text-zinc-300 font-medium text-sm">Preferred Date</Label>
+                      <Label htmlFor="date" className="text-gray-700 dark:text-zinc-300 font-medium text-sm">Preferred Date</Label>
                       <Popover>
                         <PopoverTrigger asChild>
                           <Button
                             id="date"
                             variant={"outline"}
                             className={cn(
-                              "w-full justify-start text-left font-normal bg-zinc-900 border-zinc-700 text-zinc-300 hover:bg-zinc-800 h-12 rounded-lg focus:border-white focus:ring-white",
-                              !date && "text-zinc-500"
+                              "w-full justify-start text-left font-normal bg-white border-gray-200 text-gray-700 hover:bg-gray-50 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800 h-12 rounded-lg focus:border-gray-400 focus:ring-gray-400 dark:focus:border-white dark:focus:ring-white",
+                              !date && "text-gray-500 dark:text-zinc-500"
                             )}
                           >
                             <CalendarIcon className="mr-2 h-5 w-5" />
                             {date ? format(date, "MMMM d, yyyy") : "Select a date"}
                           </Button>
                         </PopoverTrigger>
-                        <PopoverContent className="w-auto p-0 bg-zinc-900 border-zinc-700 rounded-lg shadow-xl">
+                        <PopoverContent className="w-auto p-0 bg-white border-gray-200 dark:bg-zinc-900 dark:border-zinc-700 rounded-lg shadow-xl">
                           <CalendarComponent
                             mode="single"
                             selected={date}
                             onSelect={setDate}
                             initialFocus
                             disabled={(date) => date < new Date()}
-                            className="bg-zinc-900 text-white rounded-lg"
+                            className="bg-white text-gray-900 dark:bg-zinc-900 dark:text-white rounded-lg"
                           />
                         </PopoverContent>
                       </Popover>
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="time" className="text-zinc-300 font-medium text-sm">Preferred Time</Label>
+                      <Label htmlFor="time" className="text-gray-700 dark:text-zinc-300 font-medium text-sm">Preferred Time</Label>
                       <Popover open={timeOpen} onOpenChange={setTimeOpen}>
                         <PopoverTrigger asChild>
                           <Button
                             variant="outline"
                             role="combobox"
                             aria-expanded={timeOpen}
-                            className="w-full justify-between bg-zinc-900 border-zinc-700 text-zinc-300 hover:bg-zinc-800 h-12 rounded-lg focus:border-white focus:ring-white"
+                            className="w-full justify-between bg-white border-gray-200 text-gray-700 hover:bg-gray-50 dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800 h-12 rounded-lg focus:border-gray-400 focus:ring-gray-400 dark:focus:border-white dark:focus:ring-white"
                           >
                             <div className="flex items-center">
                               <Clock className="mr-2 h-5 w-5" />
@@ -385,7 +375,7 @@ export function BookingForm() {
                             <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                           </Button>
                         </PopoverTrigger>
-                        <PopoverContent className="w-full p-0 bg-zinc-900 border-zinc-700 rounded-lg shadow-xl">
+                        <PopoverContent className="w-full p-0 bg-white border-gray-200 dark:bg-zinc-900 dark:border-zinc-700 rounded-lg shadow-xl">
                           <Command className="bg-transparent">
                             <CommandGroup className="max-h-60 overflow-y-auto">
                               {timeSlots.map((slot) => (
@@ -396,11 +386,11 @@ export function BookingForm() {
                                     setTime(currentValue)
                                     setTimeOpen(false)
                                   }}
-                                  className="text-zinc-200 hover:bg-zinc-800"
+                                  className="text-gray-800 hover:bg-gray-100 dark:text-zinc-200 dark:hover:bg-zinc-800"
                                 >
                                   <Check
                                     className={cn(
-                                      "mr-2 h-4 w-4 text-white",
+                                      "mr-2 h-4 w-4 text-gray-900 dark:text-white",
                                       time === slot ? "opacity-100" : "opacity-0"
                                     )}
                                   />
@@ -413,30 +403,29 @@ export function BookingForm() {
                       </Popover>
                     </div>
                   </div>
-                  
-                  {date && time && (
-                    <div className="mt-6 p-4 bg-zinc-900/50 border border-zinc-800 rounded-lg">
-                      <h4 className="font-medium text-white mb-2">Appointment Summary</h4>
+                    {date && time && (
+                    <div className="mt-6 p-4 bg-gray-50 border border-gray-200 dark:bg-zinc-900/50 dark:border-zinc-800 rounded-lg">
+                      <h4 className="font-medium text-gray-900 dark:text-white mb-2">Appointment Summary</h4>
                       <div className="grid grid-cols-2 gap-2 text-sm">
-                        <div className="text-zinc-400">Service:</div>
-                        <div className="text-white font-medium">{serviceTypes.find(s => s.value === service)?.label || "Not selected"}</div>
-                        <div className="text-zinc-400">Date:</div>
-                        <div className="text-white font-medium">{date ? format(date, "MMMM d, yyyy") : ""}</div>
-                        <div className="text-zinc-400">Time:</div>
-                        <div className="text-white font-medium">{time}</div>
+                        <div className="text-gray-600 dark:text-zinc-400">Service:</div>
+                        <div className="text-gray-900 dark:text-white font-medium">{serviceTypes.find(s => s.value === service)?.label || "Not selected"}</div>
+                        <div className="text-gray-600 dark:text-zinc-400">Date:</div>
+                        <div className="text-gray-900 dark:text-white font-medium">{date ? format(date, "MMMM d, yyyy") : ""}</div>
+                        <div className="text-gray-600 dark:text-zinc-400">Time:</div>
+                        <div className="text-gray-900 dark:text-white font-medium">{time}</div>
                       </div>
                     </div>
                   )}
                 </div>
               )}
               
-              <DialogFooter className="flex sm:justify-between border-t border-zinc-800 mt-6 pt-6">
+              <DialogFooter className="flex sm:justify-between border-t border-gray-200 dark:border-zinc-800 mt-6 pt-6">
                 {step > 1 ? (
                   <Button 
                     type="button" 
                     variant="outline"
                     onClick={handlePrevStep}
-                    className="bg-transparent text-white border-zinc-700 hover:bg-zinc-800 hover:text-white rounded-lg"
+                    className="bg-transparent text-gray-800 border-gray-200 hover:bg-gray-50 dark:text-white dark:border-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-white rounded-lg"
                   >
                     Back
                   </Button>
@@ -448,7 +437,7 @@ export function BookingForm() {
                   <Button 
                     type="button" 
                     onClick={handleNextStep}
-                    className="bg-white text-black hover:bg-gray-100 transition-all rounded-lg font-medium"
+                    className="bg-gray-900 text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-100 transition-all rounded-lg font-medium"
                   >
                     Continue
                   </Button>
@@ -456,7 +445,7 @@ export function BookingForm() {
                   <Button 
                     type="submit" 
                     disabled={loading || !date || !time || !service}
-                    className="bg-white text-black hover:bg-gray-100 transition-all rounded-lg font-medium flex items-center"
+                    className="bg-gray-900 text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-100 transition-all rounded-lg font-medium flex items-center"
                   >
                     {loading ? "Processing..." : "Schedule Consultation"}
                     {!loading && <ArrowRight className="ml-2 h-4 w-4" />}

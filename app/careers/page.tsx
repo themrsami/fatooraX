@@ -57,18 +57,6 @@ export default function CareersPage() {
     }
   ];
 
-  const expertiseAreas = [
-    "Accounting & Bookkeeping",
-    "Sales & Client Acquisition",
-    "Financial Management & Advisory",
-    "ERP Implementation & Development",
-    "Audit & Compliance",
-    "Tax Advisory & Planning",
-    "Business Valuation & Strategy",
-    "Technology & Automation",
-    "Operations & Project Management"
-  ];
-
   return (
     <main className="min-h-screen bg-white dark:bg-black">
       <Header />
@@ -108,28 +96,7 @@ export default function CareersPage() {
               </p>
             </div>
           </div>
-        </div>
-      </section>      {/* Areas of Expertise Section - New */}
-      <section className="py-24 bg-white dark:bg-black">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">Areas Where You Can Make an Impact</h2>
-            <p className="text-gray-600 dark:text-neutral-400">
-              Leverage your expertise across a diverse range of critical business functions.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {expertiseAreas.map((area, index) => (
-              <div 
-                key={index} 
-                className="bg-gray-50 dark:bg-neutral-950 p-6 border border-gray-200 dark:border-neutral-800 text-center rounded-lg hover:shadow-md transition-all duration-300 hover:border-gray-300 dark:hover:border-neutral-700"
-              >
-                <p className="font-medium text-gray-800 dark:text-neutral-200">{area}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        </div>      </section>
       
       {/* Current openings - Updated Rendering */}
       <section className="py-24 bg-gray-50 dark:bg-neutral-950 border-t border-gray-200 dark:border-neutral-900">

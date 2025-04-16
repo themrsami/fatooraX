@@ -85,12 +85,12 @@ export function ServiceCard({
         transition: 'max-height 0.5s ease-in-out'
       }}
     >
-      <div className={`transition-all duration-[1200ms] ease-in-out ${isHovered ? 'items-start' : 'items-center'}`}>
-        <div className={`flex items-center gap-3 transition-all duration-[1200ms] ease-in-out ${isHovered ? 'flex-row mb-4' : 'flex-col mb-6'}`}>
-          <div className={`p-2.5 bg-zinc-100 dark:bg-zinc-800 rounded-lg text-black dark:text-zinc-400 group-hover:text-black dark:group-hover:text-white transition-all duration-[1200ms] ease-in-out`}>
+      <div className={`transition-all duration-1200 ease-in-out ${isHovered ? 'items-start' : 'items-center'}`}>
+        <div className={`flex items-center gap-3 transition-all duration-1200 ease-in-out ${isHovered ? 'flex-row mb-4' : 'flex-col mb-6'}`}>
+          <div className={`p-2.5 bg-zinc-100 dark:bg-zinc-800 rounded-lg text-black dark:text-zinc-400 group-hover:text-black dark:group-hover:text-white transition-all duration-1200 ease-in-out`}>
             {getIcon(icon)}
           </div>
-          <h3 className={`text-lg font-bold text-gray-900 dark:text-white transition-all duration-[1200ms] ease-in-out ${isHovered ? 'text-left' : 'text-center mt-2'}`}>{title}</h3>
+          <h3 className={`text-lg font-bold text-gray-900 dark:text-white transition-all duration-1200 ease-in-out ${isHovered ? 'text-left' : 'text-center mt-2'}`}>{title}</h3>
         </div>
       </div>
       <p className={`text-gray-600 dark:text-zinc-400 mb-4 text-sm transition-all duration-500 ${isHovered ? 'text-left opacity-100' : 'text-center opacity-0 absolute'}`}>{description}</p>
@@ -105,7 +105,7 @@ export function ServiceCard({
       <div className="mt-2">
         <Link
           href="#"
-          className="inline-flex items-center text-sm text-black hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors dark:group-hover:text-zinc-300"
+          className={`inline-flex items-center text-sm text-black hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors dark:group-hover:text-zinc-300 ${isHovered ? 'hidden' : 'block'}`}
         >
           <span className="mr-2">Read More</span>
           <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />

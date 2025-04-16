@@ -17,10 +17,10 @@ export async function POST(request: Request) {
   try {
     // Parse the multipart form data
     const formData = await parseMultipartFormData(request);
-    const { fullName, email, phone, resume } = formData;
+      // Validate required fields
+    const { fullName, expertiseArea, email, phone, resume } = formData;
     
-    // Validate required fields
-    if (!fullName || !email || !phone || !resume || !(resume instanceof File)) {
+    if (!fullName || !expertiseArea || !email || !phone || !resume || !(resume instanceof File)) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
