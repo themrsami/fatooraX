@@ -52,9 +52,10 @@ export function MobileNav() {
 
   const menuItems = [
     { name: "Home", href: "/#hero", icon: <ArrowRight className="h-4 w-4" /> },
-    { name: "Services", href: "/#services", icon: <ArrowRight className="h-4 w-4" /> },
     { name: "About", href: "/#about", icon: <ArrowRight className="h-4 w-4" /> },
-    { name: "Clients", href: "/#clients", icon: <ArrowRight className="h-4 w-4" /> },
+    { name: "Features", href: "/#features", icon: <ArrowRight className="h-4 w-4" /> },
+    { name: "Services", href: "/#services", icon: <ArrowRight className="h-4 w-4" /> },
+    { name: "Schedule a Demo", href: "/#cta-section", icon: <ArrowRight className="h-4 w-4" /> },
     { name: "Contact", href: "/#contact", icon: <ArrowRight className="h-4 w-4" /> },
     { name: "Careers", href: "/careers", icon: <ArrowRight className="h-4 w-4" /> },
   ]

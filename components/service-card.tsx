@@ -30,7 +30,12 @@ export function ServiceCard({
   icon, 
   className 
 }: ServiceCardProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  
+  const toggleExpand = () => {
+    setIsExpanded(!isExpanded);
+  };
   
   const getIcon = (iconName: string) => {
     const icons: Record<string, LucideIcon> = {
@@ -80,23 +85,23 @@ export function ServiceCard({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
-        height: isHovered && detailedDescription ? 'auto' : 'auto',
-        maxHeight: isHovered && detailedDescription ? '500px' : '240px',
+        height: (isExpanded || isHovered) && detailedDescription ? 'auto' : 'auto',
+        maxHeight: (isExpanded || isHovered) && detailedDescription ? '500px' : '240px',
         transition: 'max-height 0.5s ease-in-out'
       }}
     >
-      <div className={`transition-all duration-1200 ease-in-out ${isHovered ? 'items-start' : 'items-center'}`}>
-        <div className={`flex items-center gap-3 transition-all duration-1200 ease-in-out ${isHovered ? 'flex-row mb-4' : 'flex-col mb-6'}`}>
+      <div className={`transition-all duration-1200 ease-in-out ${(isHovered || isExpanded) ? 'items-start' : 'items-center'}`}>
+        <div className={`flex items-center gap-3 transition-all duration-1200 ease-in-out ${(isHovered || isExpanded) ? 'flex-row mb-4' : 'flex-col mb-6'}`}>
           <div className={`p-2.5 bg-zinc-100 dark:bg-zinc-800 rounded-lg text-black dark:text-zinc-400 group-hover:text-black dark:group-hover:text-white transition-all duration-1200 ease-in-out`}>
             {getIcon(icon)}
           </div>
-          <h3 className={`text-lg font-bold text-gray-900 dark:text-white transition-all duration-1200 ease-in-out ${isHovered ? 'text-left' : 'text-center mt-2'}`}>{title}</h3>
+          <h3 className={`text-lg font-bold text-gray-900 dark:text-white transition-all duration-1200 ease-in-out ${(isHovered || isExpanded) ? 'text-left' : 'text-center mt-2'}`}>{title}</h3>
         </div>
       </div>
-      <p className={`text-gray-600 dark:text-zinc-400 mb-4 text-sm transition-all duration-500 ${isHovered ? 'text-left opacity-100' : 'text-center opacity-0 absolute'}`}>{description}</p>
+      <p className={`text-gray-600 dark:text-zinc-400 mb-4 text-sm transition-all duration-500 ${(isHovered || isExpanded) ? 'text-left opacity-100' : 'text-center opacity-0 absolute'}`}>{description}</p>
       
       {detailedDescription && (
-        <div className={`transition-all duration-500 ease-in-out overflow-hidden ${isHovered ? 'opacity-100 max-h-96' : 'opacity-0 max-h-0'}`}>
+        <div className={`transition-all duration-500 ease-in-out overflow-hidden ${(isHovered || isExpanded) ? 'opacity-100 max-h-96' : 'opacity-0 max-h-0'}`}>
           <div className="h-px w-full bg-gray-200 dark:bg-zinc-700 my-4"></div>
           {formatDetails()}
         </div>
@@ -105,7 +110,7 @@ export function ServiceCard({
       <div className="mt-2">
         <Link
           href="#"
-          className={`inline-flex items-center text-sm text-black hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors dark:group-hover:text-zinc-300 ${isHovered ? 'hidden' : 'block'}`}
+          className={`inline-flex items-center text-sm text-black hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors dark:group-hover:text-zinc-300 ${(isHovered || isExpanded) ? 'hidden' : 'block'}`}
         >
           <span className="mr-2">Read More</span>
           <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
@@ -114,7 +119,9 @@ export function ServiceCard({
       
       {detailedDescription && (
         <div 
-          className={`absolute bottom-3 right-4 transition-all duration-300 ease-in-out transform ${isHovered ? 'rotate-180 opacity-100' : 'rotate-0 opacity-70'}`}
+          onClick={toggleExpand}
+          className={`absolute bottom-3 right-4 transition-all duration-300 ease-in-out transform ${(isHovered || isExpanded) ? 'rotate-180 opacity-100' : 'rotate-0 opacity-70'} cursor-pointer`}
+          aria-label={isExpanded ? "Collapse details" : "Expand details"}
         >
           <ChevronDown className="h-4 w-4 text-gray-400 dark:text-zinc-500" />
         </div>
