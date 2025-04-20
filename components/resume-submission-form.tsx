@@ -41,6 +41,7 @@ const resumeFormSchema = z.object({
   phone: z.string().min(5, {
     message: "Please enter a valid phone number.",
   }),
+  message: z.string().optional(),
   resume: z
     .any()
     .refine((files) => files && files instanceof FileList && files.length === 1, "Please upload a resume.")
@@ -70,51 +71,92 @@ export function ResumeSubmissionForm() {  const [isSubmitting, setIsSubmitting] 
     "Technology & Automation",
     "Operations & Project Management"
   ]
-
   const form = useForm<ResumeFormValues>({
-    resolver: zodResolver(resumeFormSchema),    defaultValues: {
+    resolver: zodResolver(resumeFormSchema),
+    defaultValues: {
       fullName: "",
       expertiseArea: "",
       email: "",
       phone: "",
+      message: "",
     },
   })
-
   async function onSubmit(data: ResumeFormValues) {
     setIsSubmitting(true)
     
-    try {      const formData = new FormData()
-      formData.append("fullName", data.fullName)
-      formData.append("expertiseArea", data.expertiseArea)
-      formData.append("email", data.email)
-      formData.append("phone", data.phone)
-      formData.append("resume", data.resume[0])
-
-      const response = await fetch("/api/submit-resume", {
-        method: "POST",
-        body: formData,
-      })
+    try {
+      // Get the file data as base64 if a file is uploaded
+      let fileData = null;
+      let fileType = "";
+      let fileName = "";
+      let fileExtension = "";
       
-      if (!response.ok) {
-        throw new Error("Something went wrong. Please try again.")
+      if (data.resume && data.resume[0]) {
+        const file = data.resume[0];
+        fileName = file.name;
+        fileType = file.type;
+        fileExtension = fileName.split('.').pop() || "";
+        
+        // Convert file to base64
+        const reader = new FileReader();
+        fileData = await new Promise<string>((resolve) => {
+          reader.onload = (e) => {
+            if (e.target && e.target.result) {
+              // Extract the base64 data part (remove the prefix)
+              const base64String = e.target.result.toString();
+              // Remove the data:application/pdf;base64, prefix
+              const base64Data = base64String.split(',')[1];
+              resolve(base64Data);
+            }
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+
+      const payload = {
+        fullName: data.fullName,
+        area: data.expertiseArea,
+        email: data.email,
+        phone: data.phone,
+        message: data.message || "",
+        fileData,
+        fileType,
+        fileName,
+        fileExtension,
+        username: "junaid",
+        password: "fat@123"
+      };
+
+      const response = await fetch("https://api.fatoorax.com/API/Email/SendEmailCareer", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+      
+      const result = await response.json();
+      
+      if (result.isError) {
+        throw new Error(result.message || "Something went wrong. Please try again.");
       }
 
       toast({
         title: "Resume Submitted",
         description: "We've received your application. Thank you!",
         variant: "default",
-      })
+      });
       
-      form.reset()
-      setFileName(null)
+      form.reset();
+      setFileName(null);
     } catch (error) {
       toast({
         title: "Error",
         description: error instanceof Error ? error.message : "Something went wrong. Please try again.",
         variant: "destructive",
-      })
+      });
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
   }
 
@@ -209,6 +251,24 @@ export function ResumeSubmissionForm() {  const [isSubmitting, setIsSubmitting] 
                     placeholder="+1 (555) 123-4567" 
                     {...field}
                     className="border-gray-200 dark:border-neutral-800 bg-white dark:bg-black focus:ring-1 focus:ring-gray-300 dark:focus:ring-neutral-700" 
+                  />
+                </FormControl>
+                <FormMessage className="text-red-500" />
+              </FormItem>
+            )}
+          />
+          
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-gray-700 dark:text-gray-300">Additional Message (Optional)</FormLabel>
+                <FormControl>
+                  <textarea 
+                    placeholder="Tell us a bit about yourself and why you're interested in this role..." 
+                    {...field}
+                    className="w-full min-h-24 p-3 border border-gray-200 dark:border-neutral-800 bg-white dark:bg-black focus:ring-1 focus:ring-gray-300 dark:focus:ring-neutral-700 rounded-md" 
                   />
                 </FormControl>
                 <FormMessage className="text-red-500" />
