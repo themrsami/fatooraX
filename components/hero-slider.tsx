@@ -59,18 +59,15 @@ export function HeroSlider() {  return (
                   height={120} 
                   className="max-w-full"
                 />
-              </div>
-              
-              <p className="text-gray-200 text-lg md:text-xl leading-relaxed mb-8">
-                Your trusted partner in <a href="#services" className="underline decoration-blue-400 hover:bg-blue-400 hover:text-white hover:no-underline transition-all duration-200 px-1">financial</a>, <a href="#services" className="underline decoration-blue-400 hover:bg-blue-400 hover:text-white hover:no-underline transition-all duration-200 px-1">compliance</a>, <a href="#services" className="underline decoration-blue-400 hover:bg-blue-400 hover:text-white hover:no-underline transition-all duration-200 px-1">accounting</a> and <a href="#services" className="underline decoration-blue-400 hover:bg-blue-400 hover:text-white hover:no-underline transition-all duration-200 px-1">business consulting</a> services.
+              </div>                <p className="text-gray-200 text-lg md:text-xl leading-relaxed mb-8">
+                Your trusted partner in <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Financial</a>, <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Compliance</a>, <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Accounting</a> and <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Business Consulting</a> services.
               </p>
             </div>
           </div>
         </div>      </div>      {/* Centered mission statement */}
       <div className="bg-white dark:bg-black py-10">
-        <div className="container mx-auto px-4">
-          <p className="text-center text-gray-700 dark:text-gray-300 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
-            Fatoora X provides <a href="#services" className="underline decoration-blue-400 hover:bg-blue-400 hover:text-white hover:no-underline transition-all duration-200 px-1">integrated solutions</a> across the <a href="#services" className="underline decoration-blue-400 hover:bg-blue-400 hover:text-white hover:no-underline transition-all duration-200 px-1">financial</a> and <a href="#services" className="underline decoration-blue-400 hover:bg-blue-400 hover:text-white hover:no-underline transition-all duration-200 px-1">strategic lifecycle</a> of a business. From establishing <a href="#services" className="underline decoration-blue-400 hover:bg-blue-400 hover:text-white hover:no-underline transition-all duration-200 px-1">strong foundations</a> to executing <a href="#services" className="underline decoration-blue-400 hover:bg-blue-400 hover:text-white hover:no-underline transition-all duration-200 px-1">high-impact initiatives</a>, we support every stage of your growth.
+        <div className="container mx-auto px-4">          <p className="text-center text-gray-700 dark:text-gray-300 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
+            Fatoora X provides <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Integrated Solutions</a> across the <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Financial</a> and <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Strategic Lifecycle</a> of a business. From establishing <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Strong Foundations</a> to executing <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">High-Impact Initiatives</a>, we support every stage of your growth.
           </p>
         </div>
       </div>

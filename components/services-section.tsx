@@ -100,11 +100,11 @@ export function ServicesSection() {
                 <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Our Expert Team</h4>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <span className="text-blue-500 mr-2">•</span> 
+                    <span className="text-black mr-2">•</span> 
                     <span className="text-gray-700 dark:text-gray-300">Multidisciplinary team of CPAs, auditors, ERP consultants, and tax experts</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-blue-500 mr-2">•</span> 
+                    <span className="text-black mr-2">•</span> 
                     <span className="text-gray-700 dark:text-gray-300">Proven experience across startups, SMEs, and large organizations</span>
                   </li>
                 </ul>
@@ -114,11 +114,11 @@ export function ServicesSection() {
                 <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Our Approach</h4>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <span className="text-blue-500 mr-2">•</span> 
+                    <span className="text-black mr-2">•</span> 
                     <span className="text-gray-700 dark:text-gray-300">Industry-agnostic solutions tailored to local and international standards</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-blue-500 mr-2">•</span> 
+                    <span className="text-black mr-2">•</span> 
                     <span className="text-gray-700 dark:text-gray-300">A deep understanding of regional regulations and best industry practices</span>
                   </li>
                 </ul>
@@ -145,9 +145,9 @@ export function ServicesSection() {
               "Family Offices & HNWIs",
               "Government Vendors & NGOs"
             ].map((industry) => (
-              <div key={industry} className="bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 p-5 text-center rounded-md transition-all hover:border-blue-300 dark:hover:border-blue-800 hover:shadow-md">
+                <div key={industry} className="bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 p-5 text-center rounded-md transition-all hover:border-gray-900 dark:hover:border-gray-700 hover:shadow-md">
                 <p className="text-gray-900 dark:text-gray-200 font-medium">{industry}</p>
-              </div>
+                </div>
             ))}
           </div>
           

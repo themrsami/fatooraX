@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { Badge } from "@/components/ui/badge"
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -113,8 +112,8 @@ export function ContactSection() {
                 </div>
                 <div>                  <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-1">Phone Number</h4>
                   <p className="text-gray-600 dark:text-neutral-400 text-sm">
-                    <a href="tel:+97157804545" className="hover:text-black dark:hover:text-white transition-colors">
-                      +971 57804545
+                    <a href="tel:+971527804545" className="hover:text-black dark:hover:text-white transition-colors">
+                      +971 527804545
                     </a>
                   </p>
                 </div>

@@ -52,7 +52,7 @@ export function FeaturesSection() {
       <div className="container px-4 mx-auto relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-20">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-            Features That Set Us Apart
+            Partner With Us
           </h2>
           <p className="text-gray-600 dark:text-neutral-400 text-base md:text-lg">
             Discover the innovative features and benefits that make our services the preferred choice for businesses seeking excellence.
