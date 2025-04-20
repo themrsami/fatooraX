@@ -27,7 +27,7 @@ export function ServicesSection() {
     <section id="services" className="py-24 bg-white dark:bg-neutral-950 pt-24">
       <div className="container px-4 mx-auto">
         <div className="flex flex-col items-center text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Premium Services</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Services We Offer</h2>
           <p className="text-gray-600 dark:text-neutral-400 max-w-2xl text-sm md:text-base">
             Comprehensive financial and operational solutions tailored to elevate your business performance.
           </p>

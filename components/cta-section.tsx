@@ -32,7 +32,7 @@ export function CTASection() {  return (
         <div id="cta-section" className="max-w-4xl mx-auto mb-20">
           <div className="grid md:grid-cols-2 border border-gray-200 dark:border-neutral-800 rounded-xl overflow-hidden">
             {/* Left column - dark */}
-            <div className="bg-gray-900 dark:bg-black p-10 md:p-16 relative">
+            <div className="bg-black dark:bg-black p-10 md:p-16 relative">
               <span className="absolute top-0 left-0 h-1 w-16 bg-white"></span>
               <Badge className="relative inline-block bg-transparent text-white px-3 py-1 text-xs uppercase tracking-wider font-medium border border-gray-700 mb-8">
                 Get Started

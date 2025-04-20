@@ -32,11 +32,7 @@ export function ServiceCard({
 }: ServiceCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  
-  const toggleExpand = () => {
-    setIsExpanded(!isExpanded);
-  };
-  
+
   const getIcon = (iconName: string) => {
     const icons: Record<string, LucideIcon> = {
       Database,
@@ -110,7 +106,7 @@ export function ServiceCard({
       <div className="mt-2">
         <Link
           href="#"
-          className={`inline-flex items-center text-sm text-black hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors dark:group-hover:text-zinc-300 ${(isHovered || isExpanded) ? 'hidden' : 'block'}`}
+          className={`inline-flex items-center text-sm text-black hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors dark:group-hover:text-zinc-300 ${isHovered ? 'hidden' : 'block'}`}
         >
           <span className="mr-2">Read More</span>
           <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
@@ -119,9 +115,7 @@ export function ServiceCard({
       
       {detailedDescription && (
         <div 
-          onClick={toggleExpand}
-          className={`absolute bottom-3 right-4 transition-all duration-300 ease-in-out transform ${(isHovered || isExpanded) ? 'rotate-180 opacity-100' : 'rotate-0 opacity-70'} cursor-pointer`}
-          aria-label={isExpanded ? "Collapse details" : "Expand details"}
+          className={`absolute bottom-3 right-4 transition-all duration-300 ease-in-out transform ${isHovered ? 'rotate-180 opacity-100' : 'rotate-0 opacity-70'}`}
         >
           <ChevronDown className="h-4 w-4 text-gray-400 dark:text-zinc-500" />
         </div>

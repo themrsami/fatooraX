@@ -25,21 +25,56 @@ export function ContactSection() {
       [name]: value
     }))
   }
+  // Track submission attempts to prevent rapid resubmissions
+  const [lastSubmitTime, setLastSubmitTime] = useState<number>(0);
   
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setFormStatus("submitting")
+    e.preventDefault();
     
-    // Simulate form submission
-    setTimeout(() => {
-      setFormStatus("success")
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        message: ""
-      })
-    }, 1500)
+    // Simple client-side rate limiting (prevent submissions within 10 seconds)
+    const now = Date.now();
+    if (now - lastSubmitTime < 10000 && formStatus !== "idle") {
+      alert("Please wait a moment before submitting again.");
+      return;
+    }
+    
+    setLastSubmitTime(now);
+    setFormStatus("submitting");
+    try {
+      // Send directly to the external API endpoint
+      const response = await fetch('https://api.fatoorax.com/API/Email/SendEmailContactUs', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: formData.name,
+          email: formData.email,
+          phone: formData.phone || '',
+          message: formData.message,
+          username: "junaid",
+          password: "fat@123"
+        }),
+      });
+      
+      const result = await response.json();
+      
+      if (!result.isError) {
+        setFormStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: ""
+        });
+      } else {
+        console.error("API Error:", result.errorDescription || result.message);
+        setFormStatus("error");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setFormStatus("error");
+    }
   }
   
   return (    <section id="contact" className="py-24 bg-white dark:bg-black relative overflow-hidden">
