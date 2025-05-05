@@ -32,17 +32,17 @@ export function Header() {
         }
       }
     }
-    
-    // Set active link based on pathname for Careers page
+      // Set active link based on pathname for Careers and Blog pages
     const pathname = window.location.pathname;
     if (pathname === '/careers') {
       setActiveLink('careers');
+    } else if (pathname === '/blog') {
+      setActiveLink('blog');
     }
     
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-  // Navigation items with direct links
+  }, [])  // Navigation items with direct links
   const navItems = [
     {
       name: "Home",
@@ -66,6 +66,10 @@ export function Header() {
     {
       name: "Contact",
       href: "/#contact"
+    },
+    {
+      name: "Blog",
+      href: "/blog"
     },
     {
       name: "Careers",
@@ -92,7 +96,9 @@ export function Header() {
                     href={item.href}
                     className={cn(
                       "flex items-center px-3 py-2 rounded-md text-sm transition-colors duration-200",
-                      (activeLink === item.href.substring(2) || (item.href === "/careers" && activeLink === "careers"))
+                      (activeLink === item.href.substring(2) || 
+                        (item.href === "/careers" && activeLink === "careers") ||
+                        (item.href === "/blog" && activeLink === "blog"))
                         ? "text-white bg-white/5" 
                         : "text-white hover:bg-white/5"
                     )}
@@ -100,7 +106,9 @@ export function Header() {
                     {item.name}
                   </Link>
                   {/* Indicator for active link - line instead of dot */}
-                {(activeLink === item.href.substring(2) || (item.href === "/careers" && activeLink === "careers")) && (
+                {(activeLink === item.href.substring(2) || 
+                  (item.href === "/careers" && activeLink === "careers") || 
+                  (item.href === "/blog" && activeLink === "blog")) && (
                   <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white"></div>
                 )}
               </div>

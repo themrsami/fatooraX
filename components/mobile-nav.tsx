@@ -55,6 +55,7 @@ export function MobileNav() {
     { name: "Services", href: "/#services", icon: <ArrowRight className="h-4 w-4" /> },
     { name: "Schedule a Demo", href: "/#cta-section", icon: <ArrowRight className="h-4 w-4" /> },
     { name: "Contact", href: "/#contact", icon: <ArrowRight className="h-4 w-4" /> },
+    { name: "Blog", href: "/blog", icon: <ArrowRight className="h-4 w-4" /> },
     { name: "Careers", href: "/careers", icon: <ArrowRight className="h-4 w-4" /> },
   ]
 
@@ -110,7 +111,9 @@ export function MobileNav() {
                         href={item.href}
                         onClick={closeMenu}
                         className={`flex items-center justify-between px-4 py-2 text-sm ${
-                          activeSection === item.href.substring(2) || (item.href === "/careers" && window.location.pathname === "/careers")
+                          activeSection === item.href.substring(2) || 
+                          (item.href === "/careers" && window.location.pathname === "/careers") ||
+                          (item.href === "/blog" && window.location.pathname === "/blog")
                             ? "text-black font-medium bg-gray-100"
                             : "text-gray-700 hover:bg-gray-50 hover:text-black"
                         } transition-all duration-200`}
