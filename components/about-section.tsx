@@ -46,7 +46,7 @@ export function AboutSection() {  return (    <section id="about" className="pt-
             <span className="absolute top-0 left-0 h-1 w-12 bg-gray-900 dark:bg-white"></span>
             <h3 className="text-xl uppercase tracking-wide font-semibold text-gray-900 dark:text-white mb-6">Vision</h3>
             <p className="text-gray-700 dark:text-neutral-300 text-lg md:text-xl leading-relaxed">
-              To be the most trusted financial advisory and ERP partner for ambitious businesses across emerging and established markets.
+              To redefine the future of financial intelligence—empowering every business to operate at its highest potential through radical automation, transparent systems, and fearless innovation.
             </p>
           </div>
           
@@ -54,7 +54,7 @@ export function AboutSection() {  return (    <section id="about" className="pt-
             <span className="absolute top-0 left-0 h-1 w-12 bg-gray-900 dark:bg-white"></span>
             <h3 className="text-xl uppercase tracking-wide font-semibold text-gray-900 dark:text-white mb-6">Mission</h3>
             <p className="text-gray-700 dark:text-neutral-300 text-lg md:text-xl leading-relaxed">
-              To enable clarity, control, and confidence through expertly delivered financial and strategic services.
+              To engineer a unified ecosystem where bookkeeping, tax, ERP, and talent solutions converge into intelligent infrastructure—automating complexity, unlocking wealth, and fueling growth for tomorrow&apos;s market leaders.
             </p>
           </div>        </div>
         

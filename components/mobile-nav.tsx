@@ -13,10 +13,9 @@ export function MobileNav() {
 
   // Track active section based on scroll position
   useEffect(() => {
-    if (!isOpen) return
-
-    const handleScroll = () => {
-      const sections = ["hero", "services", "about", "clients", "contact"]
+    if (!isOpen) return    
+      const handleScroll = () => {
+      const sections = ["hero", "services", "about", "our-edge", "clients", "contact"]
       
       const current = sections.find(section => {
         const element = document.getElementById(section)
@@ -50,10 +49,9 @@ export function MobileNav() {
     document.body.style.overflow = "auto"
   }
 
-  const menuItems = [
-    { name: "Home", href: "/#hero", icon: <ArrowRight className="h-4 w-4" /> },
+  const menuItems = [    { name: "Home", href: "/#hero", icon: <ArrowRight className="h-4 w-4" /> },
     { name: "About", href: "/#about", icon: <ArrowRight className="h-4 w-4" /> },
-    { name: "Features", href: "/#features", icon: <ArrowRight className="h-4 w-4" /> },
+    { name: "Our Edge", href: "/#our-edge", icon: <ArrowRight className="h-4 w-4" /> },
     { name: "Services", href: "/#services", icon: <ArrowRight className="h-4 w-4" /> },
     { name: "Schedule a Demo", href: "/#cta-section", icon: <ArrowRight className="h-4 w-4" /> },
     { name: "Contact", href: "/#contact", icon: <ArrowRight className="h-4 w-4" /> },

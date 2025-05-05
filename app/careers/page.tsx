@@ -67,7 +67,7 @@ export default function CareersPage() {
         
           <div className="relative max-w-4xl mx-auto text-center mb-16 px-4">
             <div className="absolute left-0 right-0 top-1/2 h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-neutral-700 to-transparent -z-10"></div>
-            <Badge className="inline-block mb-6 px-4 py-1.5 text-xs uppercase tracking-wider font-medium border border-gray-200 dark:border-neutral-800 bg-white/80 dark:bg-black/80 backdrop-blur-sm">Careers</Badge>
+            
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 text-gray-900 dark:text-white leading-tight">
               Build Your Future <br />With Us
             </h1>

@@ -60,7 +60,7 @@ export function HeroSlider() {  return (
                   className="max-w-full"
                 />
               </div>                <p className="text-gray-200 text-lg md:text-xl leading-relaxed mb-8">
-                Your trusted partner in <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Financial</a>, <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Compliance</a>, <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Accounting</a> and <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Business Consulting</a> services.
+                Your Trusted Partner in <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Financial</a>, <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Compliance</a>, <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Accounting</a> and <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Business Consulting</a> Services.
               </p>
             </div>
           </div>

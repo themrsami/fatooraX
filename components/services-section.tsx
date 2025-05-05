@@ -31,7 +31,18 @@ export function ServicesSection() {
           <p className="text-gray-600 dark:text-neutral-400 max-w-2xl text-sm md:text-base">
             Comprehensive financial and operational solutions tailored to elevate your business performance.
           </p>
-        </div>        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        </div>
+        <div className="flex justify-center mb-10">
+          <Badge 
+            className="px-4 py-2 text-sm md:text-base font-medium bg-transparent text-black dark:text-white border border-gray-200 dark:border-neutral-800 hover:border-black dark:hover:border-white transition-all duration-300 shadow-[0_2px_10px_rgba(0,0,0,0.1)] hover:shadow-[0_4px_15px_rgba(0,0,0,0.15)] dark:shadow-[0_2px_10px_rgba(255,255,255,0.05)]"
+            variant="outline"
+          >
+            <span className="bg-clip-text bg-gradient-to-r from-black to-gray-700 dark:from-white dark:to-gray-300 font-semibold">
+              Infinite Solutions. Definite Impact.
+            </span>
+          </Badge>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <ServiceCard
             title="Bookkeeping & Accounting"
             description="Monthly and annual financial statement preparation with IFRS-compliant reporting"

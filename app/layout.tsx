@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   generator: 'Next.js',
   keywords: ['e-invoicing', 'electronic invoice', 'tax compliance', 'business solution'],
   authors: [{ name: 'Fatoora-X Team' }],
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({
