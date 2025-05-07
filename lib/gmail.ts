@@ -36,7 +36,7 @@ export const sendResumeEmail = async (
 
     const mailOptions = {
       from: {
-        name: 'Fatoora X Careers',
+        name: 'FatooraX Careers',
         address: process.env.GMAIL_USER as string, // Your Gmail address
       },
       to: 'info@fatoorax.com', // Where to send the submissions

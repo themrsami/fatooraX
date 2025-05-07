@@ -102,7 +102,7 @@ export function ServicesSection() {
             
             <div className="prose prose-lg dark:prose-invert max-w-none mb-8">
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-center">
-                At Fatoora X, we don't just provide services—we solve critical business problems. Our advisors blend strategic insight with practical implementation, ensuring our clients benefit from both vision and execution. We focus on tangible impact, long-term partnerships, and the highest standards of integrity.
+                At FatooraX, we don't just provide services—we solve critical business problems. Our advisors blend strategic insight with practical implementation, ensuring our clients benefit from both vision and execution. We focus on tangible impact, long-term partnerships, and the highest standards of integrity.
               </p>
             </div>
             

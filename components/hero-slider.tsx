@@ -54,7 +54,7 @@ export function HeroSlider() {  return (
               <div className="mb-6">
                 <Image 
                   src="/herologo.svg" 
-                  alt="Fatoora X Logo" 
+                  alt="FatooraX Logo" 
                   width={500} 
                   height={120} 
                   className="max-w-full"
@@ -67,7 +67,7 @@ export function HeroSlider() {  return (
         </div>      </div>      {/* Centered mission statement */}
       <div className="bg-white dark:bg-black py-10">
         <div className="container mx-auto px-4">          <p className="text-center text-gray-700 dark:text-gray-300 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
-            Fatoora X provides <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Integrated Solutions</a> across the <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Financial</a> and <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Strategic Lifecycle</a> of a business. From establishing <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Strong Foundations</a> to executing <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">High-Impact Initiatives</a>, we support every stage of your growth.
+            FatooraX provides <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Integrated Solutions</a> across the <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Financial</a> and <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Strategic Lifecycle</a> of a business. From establishing <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Strong Foundations</a> to executing <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">High-Impact Initiatives</a>, we support every stage of your growth.
           </p>
         </div>
       </div>

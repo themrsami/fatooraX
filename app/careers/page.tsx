@@ -72,7 +72,7 @@ export default function CareersPage() {
               Build Your Future <br />With Us
             </h1>
             <p className="text-gray-600 dark:text-neutral-400 text-base md:text-xl max-w-2xl mx-auto leading-relaxed">
-              Fatoora X is always looking for professionals who combine critical thinking with practical action. If you're ready to make an impact in a high-growth, high-integrity environment, we'd love to hear from you.
+              FatooraX is always looking for professionals who combine critical thinking with practical action. If you're ready to make an impact in a high-growth, high-integrity environment, we'd love to hear from you.
             </p>
           </div>
       </section>
@@ -89,7 +89,7 @@ export default function CareersPage() {
             </h2>
             <div className="bg-white/70 dark:bg-black/40 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm">
               <p className="text-gray-600 dark:text-neutral-400 text-lg leading-relaxed">
-                At Fatoora X, we don't just offer jobs — we offer the opportunity to shape industries, challenge conventions, and keep growing. Our culture is built on intellectual curiosity, shared purpose, and a commitment to excellence. We invest deeply in our people because we believe extraordinary outcomes begin with extraordinary individuals. Whether you're solving complex business problems, driving digital transformation, or advising tomorrow's leaders, your work here will make a difference.
+                At FatooraX, we don't just offer jobs — we offer the opportunity to shape industries, challenge conventions, and keep growing. Our culture is built on intellectual curiosity, shared purpose, and a commitment to excellence. We invest deeply in our people because we believe extraordinary outcomes begin with extraordinary individuals. Whether you're solving complex business problems, driving digital transformation, or advising tomorrow's leaders, your work here will make a difference.
               </p>
               <p className="text-gray-600 dark:text-neutral-400 text-lg leading-relaxed mt-4 italic font-medium">
                 Join us — and redefine what's possible.

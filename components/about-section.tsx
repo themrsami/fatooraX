@@ -24,7 +24,7 @@ export function AboutSection() {  return (    <section id="about" className="pt-
               <div className="grid md:grid-cols-5 gap-8">
                 <div className="md:col-span-3">
                   <p className="text-gray-700 dark:text-neutral-300 text-lg leading-relaxed mb-6">
-                    Fatoora X is a multidisciplinary advisory firm offering comprehensive financial, operational, and strategic support to businesses across sectors. Our services span core accounting functions, strategic tax planning, ERP implementation, and talent advisory—allowing organizations to navigate complexity, enhance performance, and unlock sustainable growth.
+                    FatooraX is a multidisciplinary advisory firm offering comprehensive financial, operational, and strategic support to businesses across sectors. Our services span core accounting functions, strategic tax planning, ERP implementation, and talent advisory—allowing organizations to navigate complexity, enhance performance, and unlock sustainable growth.
                   </p>
                 </div>
                 <div className="md:col-span-2">
