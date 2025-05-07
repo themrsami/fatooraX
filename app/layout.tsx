@@ -7,11 +7,11 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'Fatoora-X - Electronic Invoicing Solution',
+  title: 'FatooraX',
   description: 'Advanced electronic invoicing solution compliant with tax regulations',
   generator: 'Next.js',
   keywords: ['e-invoicing', 'electronic invoice', 'tax compliance', 'business solution'],
-  authors: [{ name: 'Fatoora-X Team' }],
+  authors: [{ name: 'FatooraX Team' }],
   icons: {
     icon: '/favicon.ico',
   },
