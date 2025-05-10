@@ -60,14 +60,14 @@ export function HeroSlider() {  return (
                   className="max-w-full"
                 />
               </div>                <p className="text-gray-200 text-lg md:text-xl leading-relaxed mb-8">
-                Your Trusted Partner in <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Financial</a>, <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Compliance</a>, <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Accounting</a> and <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Business Consulting</a> Services.
+                Your Trusted Partner in <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200">Financial</a>, <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200">Compliance</a>, <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200">Accounting</a> and <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200">Business Consulting</a> Services.
               </p>
             </div>
           </div>
         </div>      </div>      {/* Centered mission statement */}
       <div className="bg-white dark:bg-black py-10">
         <div className="container mx-auto px-4">          <p className="text-center text-gray-700 dark:text-gray-300 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
-            FatooraX provides <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Integrated Solutions</a> across the <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Financial</a> and <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Strategic Lifecycle</a> of a business. From establishing <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">Strong Foundations</a> to executing <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200 px-1">High-Impact Initiatives</a>, we support every stage of your growth.
+            FatooraX provides <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200">Integrated Solutions</a> across the <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200">Financial</a> and <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200">Strategic Lifecycle</a> of a business. From establishing <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200">Strong Foundations</a> to executing <a href="#services" className="hover:bg-white hover:text-black transition-all duration-200">High-Impact Initiatives</a>, we support every stage of your growth.
           </p>
         </div>
       </div>
