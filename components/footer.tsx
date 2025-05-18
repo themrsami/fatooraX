@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Linkedin, Instagram } from "lucide-react"
+import { Linkedin, Facebook } from "lucide-react"
 import { FaXTwitter } from "react-icons/fa6"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -22,7 +22,7 @@ export function Footer() {
               {[
                 { name: "Twitter", link: "https://x.com/FatooraX27762", icon: <FaXTwitter className="h-4 w-4" /> },
                 { name: "LinkedIn", link: "https://www.linkedin.com/company/fatoorax-llc/", icon: <Linkedin className="h-4 w-4" /> },
-                { name: "Instagram", link: "https://www.instagram.com/fatoorax", icon: <Instagram className="h-4 w-4" /> },
+                { name: "Facebook", link: "https://www.facebook.com/profile.php?id=61576353692061", icon: <Facebook className="h-4 w-4" /> },
               ].map((social) => (
                 <Link key={social.name} href={social.link} className="text-neutral-500 hover:text-white transition-colors">
                   <span className="sr-only">{social.name}</span>
