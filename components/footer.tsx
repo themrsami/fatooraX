@@ -18,13 +18,18 @@ export function Footer() {
                 <FatooraXLogo className="w-32 h-auto" src="/fatooraxgray.svg" />
               </div>
             </Link>
-            <p className="text-neutral-500 text-sm mt-4">Premium financial services for modern businesses.</p>            <div className="flex space-x-4 mt-6">
-              {[
+            <p className="text-neutral-500 text-sm mt-4">Premium financial services for modern businesses.</p>            <div className="flex space-x-4 mt-6">              {[
                 { name: "Twitter", link: "https://x.com/FatooraX27762", icon: <FaXTwitter className="h-4 w-4" /> },
                 { name: "LinkedIn", link: "https://www.linkedin.com/company/fatoorax-llc/", icon: <Linkedin className="h-4 w-4" /> },
                 { name: "Facebook", link: "https://www.facebook.com/profile.php?id=61576353692061", icon: <Facebook className="h-4 w-4" /> },
               ].map((social) => (
-                <Link key={social.name} href={social.link} className="text-neutral-500 hover:text-white transition-colors">
+                <Link 
+                  key={social.name} 
+                  href={social.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-neutral-500 hover:text-white transition-colors"
+                >
                   <span className="sr-only">{social.name}</span>
                   <div className="h-8 w-8 border border-neutral-800 rounded-full flex items-center justify-center hover:border-neutral-600 transition-colors">
                     {social.icon}
